@@ -1,0 +1,46 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-3 my-auto">
+        <div class="logo">
+          <img class="logo-size" src="assets/logo.gif" alt="logo">
+        </div>
+      </div>
+      <div class="col-9 text-end my-auto">
+        <div class="d-flex align-items-center justify-content-end">
+          <div class="menu_icon" [class.menu_iconClass]="menu_icon_variable" (click)="openMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="menu" [class.menuClass]="menuVariable">
+          <ul>
+            <li>
+              <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+                <button
+                  type="button"
+                  class="btn btn-primary me-2"
+                  id="dropdownManual"
+                  ngbDropdownAnchor
+                  (focus)="myDrop.open()"
+                >
+                  <img src="assets/language/languages.png" alt="languages">
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                  <button ngbDropdownItem>Қазақша <img src="assets/language/kazakhstan.png" alt="kz"></button>
+                  <button ngbDropdownItem>Русский <img src="assets/language/russia.png" alt="ru"></button>
+                  <button ngbDropdownItem>English <img src="assets/language/united-states.png" alt="en"></button>
+                </div>
+              </div>
+            </li>
+            <li>Hotels</li>
+            <li>Profile</li>
+            <li>Login</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
