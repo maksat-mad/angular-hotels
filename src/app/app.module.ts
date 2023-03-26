@@ -13,12 +13,20 @@ import { MatListModule } from '@angular/material/list';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './components/header/header.component';
 import { ClickOutsideDirective } from './directives/click-outside.directive';
+import { HomeComponent } from './pages/home/home.component';
+import { HotelsComponent } from './pages/hotels/hotels.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    HomeComponent,
+    HotelsComponent,
+    ProfileComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

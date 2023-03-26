@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-3 my-auto">
-        <img class="logo" src="assets/logo.gif" alt="logo">
+        <img routerLink="/" class="logo" src="assets/logo.gif" alt="logo">
       </div>
       <div class="col-9 text-end my-auto" appClickOutside (clickOutside)="clickedOutside()">
         <div class="d-flex align-items-center justify-content-end">
@@ -33,9 +33,9 @@
                 </div>
               </div>
             </li>
-            <li>Hotels</li>
-            <li>Profile</li>
-            <li>Login</li>
+            <li routerLink="/hotels">Hotels</li>
+            <li><a>Profile</a></li>
+            <li><a>Login</a></li>
           </ul>
         </div>
       </div>
