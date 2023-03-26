@@ -3,7 +3,7 @@ header {
   background-color: #222;
 }
 
-.logo-size {
+.logo {
   width: 140px;
   cursor: pointer;
 }
@@ -47,7 +47,7 @@ header {
   }
 
   .menu ul li:not(:first-child):hover {
-    background-color: darkgray;
+    background-color: #6c757d;
     color: yellow;
   }
 
