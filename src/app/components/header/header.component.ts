@@ -14,4 +14,9 @@ export class HeaderComponent {
     this.menuVariable = !this.menuVariable;
     this.menu_icon_variable = !this.menu_icon_variable;
   }
+
+  clickedOutside(): void {
+    this.menuVariable = false;
+    this.menu_icon_variable = false;
+  }
 }
