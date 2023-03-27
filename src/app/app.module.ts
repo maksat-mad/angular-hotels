@@ -22,6 +22,10 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {LanguageInterceptor} from "./interceptors/language.interceptor";
 import { AboutComponent } from './pages/about/about.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SignUpComponent } from './pages/auth/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { AboutComponent } from './pages/about/about.component';
     HotelsComponent,
     ProfileComponent,
     NotfoundComponent,
-    AboutComponent
+    AboutComponent,
+    LoginComponent,
+    FooterComponent,
+    SignUpComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
