@@ -8,17 +8,20 @@ header {
   margin: 0;
 }
 
-.menu ul li {
+.menu ul a li, .menu ul li {
   list-style-type: none;
   display: inline-block;
   margin-left: 24px;
+}
+
+.menu ul a {
   text-transform: uppercase;
+  text-decoration: none;
   color: #FFFFFF;
 }
 
-.menu ul li:hover {
+.menu ul a li:hover {
   color: yellow;
-  cursor: pointer;
   transition: all 0.4s ease-in-out;
 }
 
@@ -33,7 +36,7 @@ header {
     transition: all 0.4s ease-in-out;
   }
 
-  .menu ul li {
+  .menu ul a li, .menu ul li {
     display: block;
     text-align: left;
     margin: 0;
@@ -41,9 +44,8 @@ header {
     border-bottom: 1px solid #312f2f;
   }
 
-  .menu ul li:not(:first-child):hover {
-    background-color: #6c757d;
-    color: yellow;
+  .menu ul a :hover {
+    background-color: #3f576d;
   }
 
   .menu_icon {
