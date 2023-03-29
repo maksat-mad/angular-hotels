@@ -1,5 +1,11 @@
 @import 'bootstrap/scss/bootstrap';
 
+body {
+  background-color: #f0f7f1;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .logo {
   width: 140px;
   cursor: pointer;
