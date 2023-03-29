@@ -21,11 +21,9 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {LanguageInterceptor} from "./interceptors/language.interceptor";
-import { AboutComponent } from './pages/about/about.component';
-import { LoginComponent } from './pages/auth/login/login.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SignUpComponent } from './pages/auth/sign-up/sign-up.component';
-import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
+import {AboutComponent} from './pages/about/about.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {AuthModule} from "./modules/auth/auth.module";
 
 @NgModule({
   declarations: [
@@ -37,14 +35,10 @@ import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-pas
     ProfileComponent,
     NotfoundComponent,
     AboutComponent,
-    LoginComponent,
-    FooterComponent,
-    SignUpComponent,
-    ForgotPasswordComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
@@ -60,7 +54,9 @@ import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-pas
         useFactory: httpTranslateLoader,
         deps: [HttpClient]
       }
-    })
+    }),
+    AuthModule,
+    AppRoutingModule,
   ],
   providers: [
     {
