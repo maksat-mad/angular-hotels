@@ -7,14 +7,14 @@
       <form>
         <div class="row input-sizer">
           <mat-form-field appearance="fill">
-            <mat-label>Enter your email</mat-label>
+            <mat-label>Email</mat-label>
             <input matInput placeholder="pat@example.com" required>
             <!--        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
           </mat-form-field>
         </div>
         <div class="row input-sizer mt-3">
           <mat-form-field appearance="fill">
-            <mat-label>Enter your password</mat-label>
+            <mat-label>Password</mat-label>
             <input matInput [type]="hide ? 'password' : 'text'" required>
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
