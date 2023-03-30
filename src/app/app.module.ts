@@ -16,12 +16,12 @@ import {ClickOutsideDirective} from './directives/click-outside.directive';
 import {HomeComponent} from './pages/home/home.component';
 import {HotelsComponent} from './pages/hotels/hotels.component';
 import {ProfileComponent} from './pages/profile/profile.component';
-import {NotfoundComponent} from './pages/notfound/notfound.component';
+import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {LanguageInterceptor} from "./interceptors/language.interceptor";
-import {AboutComponent} from './pages/about/about.component';
+import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {AuthModule} from "./modules/auth/auth.module";
 
@@ -33,8 +33,8 @@ import {AuthModule} from "./modules/auth/auth.module";
     HomeComponent,
     HotelsComponent,
     ProfileComponent,
-    NotfoundComponent,
-    AboutComponent,
+    NotFoundComponent,
+    AboutUsComponent,
     FooterComponent
   ],
   imports: [
