@@ -21,7 +21,6 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {LanguageInterceptor} from "./interceptors/language.interceptor";
-import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {AuthModule} from "./modules/auth/auth.module";
 
@@ -34,7 +33,6 @@ import {AuthModule} from "./modules/auth/auth.module";
     HotelsComponent,
     ProfileComponent,
     NotFoundComponent,
-    AboutUsComponent,
     FooterComponent
   ],
   imports: [
