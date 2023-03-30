@@ -22,7 +22,6 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {LanguageInterceptor} from "./interceptors/language.interceptor";
 import {FooterComponent} from './components/footer/footer.component';
-import {AuthModule} from "./modules/auth/auth.module";
 
 @NgModule({
   declarations: [
@@ -53,7 +52,6 @@ import {AuthModule} from "./modules/auth/auth.module";
         deps: [HttpClient]
       }
     }),
-    AuthModule,
     AppRoutingModule,
   ],
   providers: [
