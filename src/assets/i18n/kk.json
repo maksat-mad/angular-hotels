@@ -6,5 +6,14 @@
 
   "Perth": "Перт",
   "Australia": "Аустралия",
-  "Tel": "Тел"
+  "Tel": "Тел",
+
+  "Could not login, wrong email or password": "Кіру сәтсіз аяқталды, қате электрондық пошта немесе құпия сөз",
+  "Email": "Электрондық пошта",
+  "You must enter a value": "Мән енгізу керек",
+  "Password": "Құпия сөз",
+  "Password must be at least 8 characters": "Құпия сөз кемінде 8 таңбадан тұруы керек",
+  "Forgot password?": "Құпия сөзіңізді ұмыттыңыз ба?",
+  "Need an account?": "Аккаунт керек?",
+  "Sign Up": "Тіркелу"
 }

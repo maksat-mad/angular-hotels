@@ -22,6 +22,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {LanguageInterceptor} from "./interceptors/language.interceptor";
 import {FooterComponent} from './components/footer/footer.component';
+import { PasswordDirective } from './directives/auth/password.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {FooterComponent} from './components/footer/footer.component';
     HotelsComponent,
     ProfileComponent,
     NotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    PasswordDirective
   ],
   imports: [
     BrowserModule,

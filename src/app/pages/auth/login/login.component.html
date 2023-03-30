@@ -1,37 +1,51 @@
 <div class="d-flex justify-content-center wrapper">
   <div>
     <div class="d-flex justify-content-center">
-      <h1>Login</h1>
+      <h1>{{'Login' | translate}}</h1>
+    </div>
+    <div class="d-flex justify-content-center m-3">
+      <p class="error">(!) {{'Could not login, wrong email or password' | translate}}</p>
     </div>
     <div class="d-flex justify-content-center">
-      <form>
+      <form (keydown.enter)="$event.preventDefault()" #ngForm="ngForm" (ngSubmit)="login(ngForm)">
         <div class="row input-sizer">
           <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="pat@example.com" required>
-            <!--        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+            <mat-label>{{'Email' | translate}}</mat-label>
+            <input
+              name="email"
+              matInput placeholder="example@exp.com"
+              [(ngModel)]="loginInfo.email"
+              required
+            >
+            <mat-error *ngIf="loginInfo.email === ''">{{'You must enter a value' | translate}}</mat-error>
           </mat-form-field>
         </div>
         <div class="row input-sizer mt-3">
           <mat-form-field appearance="fill">
-            <mat-label>Password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" required>
+            <mat-label>{{'Password' | translate}}</mat-label>
+            <input
+              name="password"
+              matInput [type]="hide ? 'password' : 'text'"
+              [(ngModel)]="loginInfo.password"
+              [minlength]="8"
+              required>
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
+            <mat-error *ngIf="loginInfo.password.length < 8">{{'Password must be at least 8 characters' | translate}}</mat-error>
           </mat-form-field>
         </div>
-        <div class="d-flex justify-content-center">
-          <button mat-raised-button color="primary">Login</button>
+        <div class="d-flex justify-content-center mt-3">
+          <button [disabled]="ngForm.invalid" type="submit" mat-raised-button color="primary">{{'Login' | translate}}</button>
         </div>
       </form>
     </div>
     <div class="d-flex justify-content-center mt-3">
-      <a routerLink="/auth/forgot-password">Forgot password?</a>
+      <a routerLink="/auth/forgot-password">{{'Forgot password?' | translate}}</a>
     </div>
     <div class="d-flex justify-content-center mt-3 gap-1">
-      <p>Need an account?</p>
-      <a routerLink="/auth/sign-up">Sign Up</a>
+      <p>{{'Need an account?' | translate}}</p>
+      <a routerLink="/auth/sign-up">{{'Sign Up' | translate}}</a>
     </div>
   </div>
 </div>

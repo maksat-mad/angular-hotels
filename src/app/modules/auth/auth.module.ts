@@ -9,6 +9,8 @@ import {TranslateModule} from "@ngx-translate/core";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {MatRadioModule} from "@angular/material/radio";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {MatButtonModule} from "@angular/material/button";
     TranslateModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRadioModule,
+    FormsModule
   ]
 })
 export class AuthModule {
