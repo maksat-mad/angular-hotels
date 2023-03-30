@@ -1,5 +1,37 @@
-<p>login works!</p>
-<a routerLink="/hotels"><li>{{'Hotels' | translate}}</li></a>
-<a routerLink="/auth/login"><li>{{'Login' | translate}}</li></a>
-<a routerLink="/auth/sign-up"><li>SignUp</li></a>
-<a routerLink="/auth/forgot-password"><li>ForgotPassword</li></a>
+<div class="d-flex justify-content-center wrapper">
+  <div>
+    <div class="d-flex justify-content-center">
+      <h1>Login</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+      <form>
+        <div class="row input-sizer">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="pat@example.com" required>
+            <!--        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+          </mat-form-field>
+        </div>
+        <div class="row input-sizer mt-3">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button mat-raised-button color="primary">Login</button>
+        </div>
+      </form>
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+      <a routerLink="/auth/forgot-password">Forgot password?</a>
+    </div>
+    <div class="d-flex justify-content-center mt-3 gap-1">
+      <p>Need an account?</p>
+      <a routerLink="/auth/sign-up">Sign Up</a>
+    </div>
+  </div>
+</div>
