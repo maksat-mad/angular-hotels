@@ -19,7 +19,7 @@
               [(ngModel)]="loginInfo.email"
               required
             >
-            <mat-error *ngIf="emailControl.errors">{{emailControl.errors?.['msg'] | translate}}</mat-error>
+            <mat-error *ngIf="emailControl.errors">{{emailControl.errors['msg'] | translate}}</mat-error>
           </mat-form-field>
         </div>
         <div class="row input-sizer mt-3">
@@ -37,7 +37,7 @@
                     [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
-            <mat-error *ngIf="passwordControl.errors">{{passwordControl.errors?.['msg'] | translate}}</mat-error>
+            <mat-error *ngIf="passwordControl.errors">{{passwordControl.errors['msg'] | translate}}</mat-error>
           </mat-form-field>
         </div>
         <div class="d-flex justify-content-center mt-3">
