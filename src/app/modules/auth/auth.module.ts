@@ -11,12 +11,16 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatRadioModule} from "@angular/material/radio";
 import {FormsModule} from "@angular/forms";
+import {EmailValidatorDirective} from "../../directives/auth/email-validator.directive";
+import {PasswordValidatorDirective} from "../../directives/auth/password-validator.directive";
 
 @NgModule({
   declarations: [
     LoginComponent,
     SignUpComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    EmailValidatorDirective,
+    PasswordValidatorDirective
   ],
   imports: [
     CommonModule,

@@ -12,31 +12,37 @@
           <mat-form-field appearance="fill">
             <mat-label>{{'Email' | translate}}</mat-label>
             <input
+              #emailControl="ngModel"
+              appEmailValidator
               name="email"
               matInput placeholder="example@exp.com"
               [(ngModel)]="loginInfo.email"
               required
             >
-            <mat-error *ngIf="loginInfo.email === ''">{{'You must enter a value' | translate}}</mat-error>
+            <mat-error *ngIf="emailControl.errors">{{emailControl.errors?.['msg'] | translate}}</mat-error>
           </mat-form-field>
         </div>
         <div class="row input-sizer mt-3">
           <mat-form-field appearance="fill">
             <mat-label>{{'Password' | translate}}</mat-label>
             <input
+              #passwordControl="ngModel"
+              appPasswordValidator
               name="password"
               matInput [type]="hide ? 'password' : 'text'"
               [(ngModel)]="loginInfo.password"
-              [minlength]="8"
-              required>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              required
+            >
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
-            <mat-error *ngIf="loginInfo.password.length < 8">{{'Password must be at least 8 characters' | translate}}</mat-error>
+            <mat-error *ngIf="passwordControl.errors">{{passwordControl.errors?.['msg'] | translate}}</mat-error>
           </mat-form-field>
         </div>
         <div class="d-flex justify-content-center mt-3">
-          <button [disabled]="ngForm.invalid" type="submit" mat-raised-button color="primary">{{'Login' | translate}}</button>
+          <button [disabled]="ngForm.invalid" type="submit" mat-raised-button
+                  color="primary">{{'Login' | translate}}</button>
         </div>
       </form>
     </div>
