@@ -4,7 +4,7 @@
       <h1>{{'Login' | translate}}</h1>
     </div>
     <div class="d-flex justify-content-center m-3">
-      <p class="error">(!) {{'Could not login, wrong email or password' | translate}}</p>
+      <p class="red fw-semibold">(!) {{'Could not login, wrong email or password' | translate}}</p>
     </div>
     <div class="d-flex justify-content-center">
       <form (keydown.enter)="$event.preventDefault()" #ngForm="ngForm" (ngSubmit)="login(ngForm)">
