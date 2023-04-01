@@ -12,10 +12,6 @@ import {AbstractControl, NG_VALIDATORS, ValidationErrors, Validator} from "@angu
   ]
 })
 export class PasswordValidatorDirective implements Validator {
-
-  constructor() {
-  }
-
   validate(control: AbstractControl): ValidationErrors | null {
     const password = control.value as string;
     if (password === null || password.length < 8) {

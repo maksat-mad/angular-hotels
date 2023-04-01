@@ -13,6 +13,9 @@ import {MatRadioModule} from "@angular/material/radio";
 import {FormsModule} from "@angular/forms";
 import {EmailValidatorDirective} from "../../directives/auth/email-validator.directive";
 import {PasswordValidatorDirective} from "../../directives/auth/password-validator.directive";
+import {PhoneValidatorDirective} from '../../directives/auth/phone-validator.directive';
+import {ConfirmPasswordValidatorDirective} from '../../directives/auth/confirm-password-validator.directive';
+import {SignupEmailValidatorDirective} from '../../directives/auth/signup-email-validator.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import {PasswordValidatorDirective} from "../../directives/auth/password-validat
     SignUpComponent,
     ForgotPasswordComponent,
     EmailValidatorDirective,
-    PasswordValidatorDirective
+    PasswordValidatorDirective,
+    PhoneValidatorDirective,
+    ConfirmPasswordValidatorDirective,
+    SignupEmailValidatorDirective
   ],
   imports: [
     CommonModule,

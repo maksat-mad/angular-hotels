@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {SignUpInfo} from "../../../modals/auth/AuthInfo";
 import {NgForm} from "@angular/forms";
 
@@ -23,5 +23,10 @@ export class SignUpComponent {
 
   signUp(form: NgForm) {
     console.log(form.value)
+  }
+
+  passwordChange(password: string) {
+    this.signUpInfo.password = password;
+    this.confirmPassword = '';
   }
 }
