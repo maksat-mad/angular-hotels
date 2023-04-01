@@ -8,7 +8,7 @@
   "Australia": "Australia",
   "Tel": "Tel",
 
-  "Could not login, wrong email or password": "Could not login, wrong email or password",
+  "Failed to login, wrong email or password": "Failed to login, wrong email or password",
   "Loading": "Loading",
   "Email": "Email",
   "You must enter a value": "You must enter a value",
@@ -23,5 +23,22 @@
 
   "Forgot password?": "Forgot password?",
   "Need an account?": "Need an account?",
-  "Sign Up": "Sign Up"
+  "Sign Up": "Sign Up",
+
+  "Firstname": "Firstname",
+  "Max 12 characters": "Max 12 characters",
+  "Ex. Maksat": "Ex. Maksat",
+  "Firstname is required": "Firstname is required",
+  "Lastname": "Lastname",
+  "Ex. Madeniyetov": "Ex. Madeniyetov",
+  "Gender": "Gender",
+  "Male": "Male",
+  "Female": "Female",
+  "Phone": "Phone",
+  "Phone number is required": "Phone number is required",
+  "Invalid phone number": "Invalid phone number",
+  "Email is already registered in the system": "Email is already registered in the system",
+  "Confirm Password": "Confirm Password",
+  "Passwords do not match": "Passwords do not match",
+  "Failed to register in the system": "Failed to register in the system"
 }

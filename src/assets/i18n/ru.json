@@ -8,7 +8,7 @@
   "Australia": "Австралия",
   "Tel": "Тел",
 
-  "Could not login, wrong email or password": "Не удалось войти, неверный адрес электронной почты или пароль",
+  "Failed to login, wrong email or password": "Не удалось войти, неверный адрес электронной почты или пароль",
   "Loading": "Загрузка",
   "Email": "Электронная почта",
   "You must enter a value": "Вы должны ввести значение",
@@ -23,5 +23,22 @@
 
   "Forgot password?": "Забыли пароль?",
   "Need an account?": "Нужен аккаунт?",
-  "Sign Up": "Зарегистрироваться"
+  "Sign Up": "Зарегистрироваться",
+
+  "Firstname": "Имя",
+  "Max 12 characters": "Максимум 12 символов",
+  "Ex. Maksat": "Например, Максат",
+  "Firstname is required": "Требуется имя",
+  "Lastname": "Фамилия",
+  "Ex. Madeniyetov": "Например, Мадениетов",
+  "Gender": "Пол",
+  "Male": "Мужской",
+  "Female": "Женщина",
+  "Phone": "Телефон",
+  "Phone number is required": "Требуется номер телефона",
+  "Invalid phone number": "Неверный номер телефона",
+  "Email is already registered in the system": "Электронная почта уже зарегистрирована в системе",
+  "Confirm Password": "Подтвердить пароль",
+  "Passwords do not match": "Пароли не совпадают",
+  "Failed to register in the system": "Не удалось зарегистрироваться в системе"
 }

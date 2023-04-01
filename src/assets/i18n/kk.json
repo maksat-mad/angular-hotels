@@ -8,7 +8,7 @@
   "Australia": "Аустралия",
   "Tel": "Тел",
 
-  "Could not login, wrong email or password": "Кіру сәтсіз аяқталды, қате электрондық пошта немесе құпия сөз",
+  "Failed to login, wrong email or password": "Кіру сәтсіз аяқталды, қате электрондық пошта немесе құпия сөз",
   "Loading": "Жүктелуде",
   "Email": "Электрондық пошта",
   "You must enter a value": "Мән енгізу керек",
@@ -23,5 +23,22 @@
 
   "Forgot password?": "Құпия сөзіңізді ұмыттыңыз ба?",
   "Need an account?": "Аккаунт керек?",
-  "Sign Up": "Тіркелу"
+  "Sign Up": "Тіркелу",
+
+  "Firstname": "Аты",
+  "Max 12 characters": "Ең көбі 12 таңба",
+  "Ex. Maksat": "Мысалы, Мақсат",
+  "Firstname is required": "Атыңыз қажет",
+  "Lastname": "Тегі",
+  "Ex. Madeniyetov": "Мысалы, Мәдениетов",
+  "Gender": "Жынысыңыз",
+  "Male": "Еркек",
+  "Female": "Әйел",
+  "Phone": "Телефон",
+  "Phone number is required": "Телефон нөміріңіз қажет",
+  "Invalid phone number": "Телефон нөмірі жарамсыз",
+  "Email is already registered in the system": "Электрондық пошта жүйеде тіркелген",
+  "Confirm Password": "Құпия сөзді растау",
+  "Passwords do not match": "Құпия сөздер сәйкес келмейді",
+  "Failed to register in the system": "Жүйеге тіркелу мүмкін болмады"
 }
