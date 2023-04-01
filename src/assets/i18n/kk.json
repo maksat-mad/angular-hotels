@@ -9,10 +9,18 @@
   "Tel": "Тел",
 
   "Could not login, wrong email or password": "Кіру сәтсіз аяқталды, қате электрондық пошта немесе құпия сөз",
+  "Loading": "Жүктелуде",
   "Email": "Электрондық пошта",
   "You must enter a value": "Мән енгізу керек",
+  "Invalid email": "Жарамсыз электрондық пошта",
+
   "Password": "Құпия сөз",
   "Password must be at least 8 characters": "Құпия сөз кемінде 8 таңбадан тұруы керек",
+  "Password must not contain spaces": "Құпия сөзде бос орындар болмауы керек",
+  "Password must contain at least one letter": "Құпия сөзде кем дегенде бір әріп болуы керек",
+  "Password must contain at least one digit": "Құпия сөзде кем дегенде бір сан болуы керек",
+  "Password must contain at least one special character (!#$%&?*@)": "Құпия сөзде кем дегенде бір арнайы таңба болуы керек (!#$%&?*@)",
+
   "Forgot password?": "Құпия сөзіңізді ұмыттыңыз ба?",
   "Need an account?": "Аккаунт керек?",
   "Sign Up": "Тіркелу"

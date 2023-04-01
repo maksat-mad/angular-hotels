@@ -9,10 +9,18 @@
   "Tel": "Tel",
 
   "Could not login, wrong email or password": "Could not login, wrong email or password",
+  "Loading": "Loading",
   "Email": "Email",
   "You must enter a value": "You must enter a value",
+  "Invalid email": "Invalid email",
+
   "Password": "Password",
   "Password must be at least 8 characters": "Password must be at least 8 characters",
+  "Password must not contain spaces": "Password must not contain spaces",
+  "Password must contain at least one letter": "Password must contain at least one letter",
+  "Password must contain at least one digit": "Password must contain at least one digit",
+  "Password must contain at least one special character (!#$%&?*@)": "Password must contain at least one special character (!#$%&?*@)",
+
   "Forgot password?": "Forgot password?",
   "Need an account?": "Need an account?",
   "Sign Up": "Sign Up"

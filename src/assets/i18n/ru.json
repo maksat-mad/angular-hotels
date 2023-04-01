@@ -9,10 +9,18 @@
   "Tel": "Тел",
 
   "Could not login, wrong email or password": "Не удалось войти, неверный адрес электронной почты или пароль",
+  "Loading": "Загрузка",
   "Email": "Электронная почта",
   "You must enter a value": "Вы должны ввести значение",
+  "Invalid email": "Неверный адрес электронной почты",
+
   "Password": "Пароль",
   "Password must be at least 8 characters": "Пароль должен содержать не менее 8 символов",
+  "Password must not contain spaces": "Пароль не должен содержать пробелов",
+  "Password must contain at least one letter": "Пароль должен содержать хотя бы одну букву",
+  "Password must contain at least one digit": "Пароль должен содержать хотя бы одну цифру",
+  "Password must contain at least one special character (!#$%&?*@)": "Пароль должен содержать хотя бы один специальный символ (!#$%&?*@)",
+
   "Forgot password?": "Забыли пароль?",
   "Need an account?": "Нужен аккаунт?",
   "Sign Up": "Зарегистрироваться"
