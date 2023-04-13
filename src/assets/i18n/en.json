@@ -40,5 +40,10 @@
   "Email is already registered in the system": "Email is already registered in the system",
   "Confirm Password": "Confirm Password",
   "Passwords do not match": "Passwords do not match",
-  "Failed to register in the system": "Failed to register in the system"
+  "Failed to register in the system": "Failed to register in the system",
+
+  "Reset password": "Reset password",
+  "Failed to send email address": "Failed to send email address",
+  "send": "send",
+  "This email address is not registered in the system": "This email address is not registered in the system"
 }

@@ -40,5 +40,10 @@
   "Email is already registered in the system": "Электрондық пошта жүйеде тіркелген",
   "Confirm Password": "Құпия сөзді растау",
   "Passwords do not match": "Құпия сөздер сәйкес келмейді",
-  "Failed to register in the system": "Жүйеге тіркелу мүмкін болмады"
+  "Failed to register in the system": "Жүйеге тіркелу мүмкін болмады",
+
+  "Reset password": "Құпия сөзді өзгерту",
+  "Failed to send email address": "Электрондық пошта мекенжайын жіберу мүмкін болмады",
+  "send": "жіберу",
+  "This email address is not registered in the system": "Бұл электрондық пошта мекенжайы жүйеде тіркелмеген"
 }

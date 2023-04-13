@@ -11,11 +11,12 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatRadioModule} from "@angular/material/radio";
 import {FormsModule} from "@angular/forms";
-import {EmailValidatorDirective} from "../../directives/auth/email-validator.directive";
-import {PasswordValidatorDirective} from "../../directives/auth/password-validator.directive";
-import {PhoneValidatorDirective} from '../../directives/auth/phone-validator.directive';
-import {ConfirmPasswordValidatorDirective} from '../../directives/auth/confirm-password-validator.directive';
-import {SignupEmailValidatorDirective} from '../../directives/auth/signup-email-validator.directive';
+import {EmailValidatorDirective} from "../../directives/auth/validators/email-validator.directive";
+import {PasswordValidatorDirective} from "../../directives/auth/validators/password-validator.directive";
+import {PhoneValidatorDirective} from '../../directives/auth/validators/phone-validator.directive';
+import {ConfirmPasswordValidatorDirective} from '../../directives/auth/validators/confirm-password-validator.directive';
+import {SignupEmailValidatorDirective} from '../../directives/auth/async-validators/signup-email-validator.directive';
+import {ForgotPasswordValidatorDirective} from '../../directives/auth/async-validators/forgot-password-validator.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {SignupEmailValidatorDirective} from '../../directives/auth/signup-email-
     PasswordValidatorDirective,
     PhoneValidatorDirective,
     ConfirmPasswordValidatorDirective,
-    SignupEmailValidatorDirective
+    SignupEmailValidatorDirective,
+    ForgotPasswordValidatorDirective
   ],
   imports: [
     CommonModule,

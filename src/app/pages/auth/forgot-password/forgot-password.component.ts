@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-forgot-password',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['../auth.scss']
 })
 export class ForgotPasswordComponent {
+  email = '';
 
+  resetPassword(form: NgForm) {
+    console.log(form.value);
+  }
 }
