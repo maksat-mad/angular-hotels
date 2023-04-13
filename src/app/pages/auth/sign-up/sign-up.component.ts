@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {SignUpInfo} from "../../../modals/auth/AuthInfo";
+import {SignUpInfo} from "../../../models/auth/AuthInfo";
 import {NgForm} from "@angular/forms";
 
 @Component({
