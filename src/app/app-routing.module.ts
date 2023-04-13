@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./pages/home/home.component";
-import {HotelsComponent} from "./pages/hotels/hotels.component";
 import {NotFoundComponent} from "./pages/not-found/not-found.component";
 
 const routes: Routes = [
@@ -10,7 +9,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {path: 'hotels',
-    component: HotelsComponent
+    loadChildren: () => import('./modules/hotels/hotels.module').then(c => c.HotelsModule)
   },
   {
     path: 'about-us',

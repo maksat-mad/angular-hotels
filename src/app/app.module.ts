@@ -14,7 +14,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HeaderComponent} from './components/header/header.component';
 import {ClickOutsideDirective} from './directives/click-outside.directive';
 import {HomeComponent} from './pages/home/home.component';
-import {HotelsComponent} from './pages/hotels/hotels.component';
 import {ProfileComponent} from './pages/profile/profile.component';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
@@ -29,7 +28,6 @@ import {FooterComponent} from './components/footer/footer.component';
     HeaderComponent,
     ClickOutsideDirective,
     HomeComponent,
-    HotelsComponent,
     ProfileComponent,
     NotFoundComponent,
     FooterComponent
