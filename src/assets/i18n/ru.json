@@ -54,5 +54,10 @@
   "Canberra": "Канберра",
   "Hobart": "Хобарт",
   "Darwin": "Дарвин",
-  "Going to": "Собираюсь"
+  "Going to": "Собираюсь",
+
+  "Enter a date range": "Введите диапазон дат",
+  "Check-in": "Заезд",
+  "Check-out": "Выезд",
+  "Day / Month / Year": "День / Месяц / Год"
 }

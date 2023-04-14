@@ -54,5 +54,10 @@
   "Canberra": "Канберра",
   "Hobart": "Хобарт",
   "Darwin": "Дарвин",
-  "Going to": "Бару"
+  "Going to": "Бару",
+
+  "Enter a date range": "Күндер аралығын енгізіңіз",
+  "Check-in": "Келу",
+  "Check-out": "Кету",
+  "Day / Month / Year": "Күн / Ай / Жыл"
 }

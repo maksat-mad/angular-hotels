@@ -8,4 +8,5 @@ import {cities} from "../../data/hotels-data/HotelsData";
 })
 export class HotelsComponent {
   cities = cities;
+  todayDate: Date = new Date();
 }

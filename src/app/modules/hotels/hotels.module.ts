@@ -4,16 +4,26 @@ import { HotelsRoutingModule } from './hotels-routing.module';
 import {HotelsComponent} from "../../pages/hotels/hotels.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {MatSelectModule} from "@angular/material/select";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
     HotelsComponent
   ],
-    imports: [
-        CommonModule,
-        HotelsRoutingModule,
-        TranslateModule,
-        MatSelectModule
-    ]
+  imports: [
+    CommonModule,
+    HotelsRoutingModule,
+    TranslateModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+  ],
+  providers: [
+    {
+      provide: MAT_DATE_LOCALE,
+      useValue: 'en-GB'
+    }
+  ]
 })
 export class HotelsModule { }

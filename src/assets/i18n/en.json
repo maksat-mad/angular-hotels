@@ -54,5 +54,10 @@
   "Canberra": "Canberra",
   "Hobart": "Hobart",
   "Darwin": "Darwin",
-  "Going to": "Going to"
+  "Going to": "Going to",
+
+  "Enter a date range": "Enter a date range",
+  "Check-in": "Check-in",
+  "Check-out": "Check-out",
+  "Day / Month / Year": "Day / Month / Year"
 }

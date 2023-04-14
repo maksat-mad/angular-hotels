@@ -6,3 +6,14 @@
     </mat-option>
   </mat-select>
 </mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label>{{'Enter a date range' | translate}}</mat-label>
+  <mat-date-range-input [rangePicker]="picker" [min]="todayDate">
+    <input matStartDate placeholder="{{'Check-in' | translate}}">
+    <input matEndDate placeholder="{{'Check-out' | translate}}">
+  </mat-date-range-input>
+  <mat-hint>{{'Day / Month / Year' | translate}}</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>
