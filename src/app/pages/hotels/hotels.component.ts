@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {cities} from "../../data/hotels-data/HotelsData";
 
 @Component({
   selector: 'app-hotels',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./hotels.component.scss']
 })
 export class HotelsComponent {
-
+  cities = cities;
 }

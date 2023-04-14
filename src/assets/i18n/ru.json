@@ -45,5 +45,14 @@
   "Reset password": "Сбросить пароль",
   "Failed to send email address": "Не удалось отправить адрес электронной почты",
   "send": "отправить",
-  "This email address is not registered in the system": "Этот адрес электронной почты не зарегистрирован в системе"
+  "This email address is not registered in the system": "Этот адрес электронной почты не зарегистрирован в системе",
+
+  "Sydney": "Сидней",
+  "Melbourne": "Мельбурн",
+  "Brisbane": "Брисбен",
+  "Adelaide": "Аделаида",
+  "Canberra": "Канберра",
+  "Hobart": "Хобарт",
+  "Darwin": "Дарвин",
+  "Going to": "Собираюсь"
 }

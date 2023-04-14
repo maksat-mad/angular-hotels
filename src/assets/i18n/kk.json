@@ -45,5 +45,14 @@
   "Reset password": "Құпия сөзді өзгерту",
   "Failed to send email address": "Электрондық пошта мекенжайын жіберу мүмкін болмады",
   "send": "жіберу",
-  "This email address is not registered in the system": "Бұл электрондық пошта мекенжайы жүйеде тіркелмеген"
+  "This email address is not registered in the system": "Бұл электрондық пошта мекенжайы жүйеде тіркелмеген",
+
+  "Sydney": "Сидней",
+  "Melbourne": "Мельбурн",
+  "Brisbane": "Брисбен",
+  "Adelaide": "Аделаида",
+  "Canberra": "Канберра",
+  "Hobart": "Хобарт",
+  "Darwin": "Дарвин",
+  "Going to": "Бару"
 }

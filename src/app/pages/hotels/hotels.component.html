@@ -1,2 +1,8 @@
-<p>hotels works!</p>
-{{'Hotels' | translate}}
+<mat-form-field appearance="fill">
+  <mat-label>{{'Going to' | translate}}</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let city of cities" [value]="city.value">
+      {{city.viewValue | translate}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

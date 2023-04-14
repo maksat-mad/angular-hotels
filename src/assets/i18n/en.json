@@ -45,5 +45,14 @@
   "Reset password": "Reset password",
   "Failed to send email address": "Failed to send email address",
   "send": "send",
-  "This email address is not registered in the system": "This email address is not registered in the system"
+  "This email address is not registered in the system": "This email address is not registered in the system",
+
+  "Sydney": "Sydney",
+  "Melbourne": "Melbourne",
+  "Brisbane": "Brisbane",
+  "Adelaide": "Adelaide",
+  "Canberra": "Canberra",
+  "Hobart": "Hobart",
+  "Darwin": "Darwin",
+  "Going to": "Going to"
 }
