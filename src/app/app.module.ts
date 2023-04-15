@@ -12,7 +12,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HeaderComponent} from './components/header/header.component';
-import {ClickOutsideDirective} from './directives/click-outside.directive';
 import {HomeComponent} from './pages/home/home.component';
 import {ProfileComponent} from './pages/profile/profile.component';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
@@ -21,12 +20,12 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {LanguageInterceptor} from "./interceptors/language.interceptor";
 import {FooterComponent} from './components/footer/footer.component';
+import {SharedModule} from "./modules/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ClickOutsideDirective,
     HomeComponent,
     ProfileComponent,
     NotFoundComponent,
@@ -51,6 +50,7 @@ import {FooterComponent} from './components/footer/footer.component';
       }
     }),
     AppRoutingModule,
+    SharedModule
   ],
   providers: [
     {

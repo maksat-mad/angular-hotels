@@ -1,0 +1,8 @@
+<div class="modal">
+  <div class="modal-content" appClickOutside (clickOutside)="clickedOutside()">
+    <div class="d-flex justify-content-end">
+      <span class="close" [routerLink]="['/hotels/', { outlets: { modal: null } }]">&times;</span>
+    </div>
+    <p>Some text in the Modal..</p>
+  </div>
+</div>
