@@ -3,8 +3,7 @@ import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-forgot-password',
-  templateUrl: './forgot-password.component.html',
-  styleUrls: ['../auth.scss']
+  templateUrl: './forgot-password.component.html'
 })
 export class ForgotPasswordComponent {
   email = '';

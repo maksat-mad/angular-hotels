@@ -4,8 +4,7 @@ import {LoginInfo} from "../../../models/auth/AuthInfo";
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['../auth.scss']
+  templateUrl: './login.component.html'
 })
 export class LoginComponent {
   hide = true;

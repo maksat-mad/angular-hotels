@@ -4,8 +4,7 @@ import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['../auth.scss']
+  templateUrl: './sign-up.component.html'
 })
 export class SignUpComponent {
   hide = true;

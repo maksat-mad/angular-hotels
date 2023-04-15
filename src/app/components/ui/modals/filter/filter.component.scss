@@ -13,6 +13,7 @@
 }
 
 .modal-content {
+  position: relative;
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
@@ -29,4 +30,9 @@
   color: crimson;
   text-decoration: none;
   cursor: pointer;
+}
+
+.done-button {
+  position: sticky;
+  bottom: 10px;
 }

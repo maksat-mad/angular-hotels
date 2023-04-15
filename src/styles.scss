@@ -25,3 +25,13 @@ body {
 .red {
   color: #f44336;
 }
+
+.wrapper {
+  margin: 85px 0 50px;
+}
+
+@media(min-width: 700px) {
+  .input-sizer {
+    width: 500px;
+  }
+}
