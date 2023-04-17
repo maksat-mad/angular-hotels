@@ -1,48 +1,58 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {FormBuilder} from "@angular/forms";
+import {FilterService} from "../../../../services/filter.service";
+import {Filter} from "../../../../models/hotels/HotelsInfo";
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss']
 })
-export class FilterComponent {
+export class FilterComponent implements OnInit {
+  filterService = inject(FilterService);
   formBuilder = inject(FormBuilder);
   router = inject(Router);
   firstClick = true;
 
   form = this.formBuilder.nonNullable.group({
-    propertyName: [],
-    apartment: [],
-    hotel: [],
-    hostel: [],
-    price: [],
-    star1: [],
-    star2: [],
-    star3: [],
-    star4: [],
-    star5: [],
-    rating: [],
-    breakfast: [],
-    lunch: [],
-    dinner: [],
-    all_inclusive: [],
-    place: [],
-    parking: [],
-    pool: [],
-    spa: [],
-    pet_friendly: [],
-    wifi: [],
-    air_conditioned: [],
-    restaurant: [],
-    sea_view: [],
-    gym: []
+    propertyName: [''],
+    apartment: [false],
+    hotel: [false],
+    hostel: [false],
+    price: [50],
+    star1: [false],
+    star2: [false],
+    star3: [false],
+    star4: [false],
+    star5: [false],
+    rating: [0],
+    breakfast: [false],
+    lunch: [false],
+    dinner: [false],
+    all_inclusive: [false],
+    place: [0],
+    parking: [false],
+    pool: [false],
+    spa: [false],
+    pet_friendly: [false],
+    wifi: [false],
+    air_conditioned: [false],
+    restaurant: [false],
+    sea_view: [false],
+    gym: [false]
   }, { updateOn: 'blur' });
 
+  ngOnInit(): void {
+    const filterInfoBSubject = this.filterService.filterInfoBSubject.subscribe((filter) => {
+      this.form.reset(filter);
+    });
+    filterInfoBSubject.unsubscribe();
+  }
 
   onSubmit() {
-    console.log(this.form.value);
+    this.filterService.setFilter(<Filter> this.form.value);
+    this.router.navigate(['/hotels/', { outlets: {modal: null} }]);
   }
 
   clearModal() {

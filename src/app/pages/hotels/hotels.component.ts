@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {cities} from "../../data/hotels-data/HotelsData";
+import {FilterService} from "../../services/filter.service";
 
 @Component({
   selector: 'app-hotels',
@@ -7,6 +8,7 @@ import {cities} from "../../data/hotels-data/HotelsData";
   styleUrls: ['./hotels.component.scss']
 })
 export class HotelsComponent {
+  filterService = inject(FilterService);
   cities = cities;
   todayDate: Date = new Date();
 }
