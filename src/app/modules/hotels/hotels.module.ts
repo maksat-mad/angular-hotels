@@ -13,26 +13,29 @@ import {MatInputModule} from "@angular/material/input";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatSliderModule} from "@angular/material/slider";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     HotelsComponent,
     FilterComponent
   ],
-  imports: [
-    CommonModule,
-    HotelsRoutingModule,
-    TranslateModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatButtonModule,
-    SharedModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatRadioModule,
-    MatSliderModule
-  ],
+    imports: [
+        CommonModule,
+        HotelsRoutingModule,
+        TranslateModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatButtonModule,
+        SharedModule,
+        MatInputModule,
+        MatCheckboxModule,
+        MatRadioModule,
+        MatSliderModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [
     {
       provide: MAT_DATE_LOCALE,

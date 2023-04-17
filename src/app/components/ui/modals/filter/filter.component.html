@@ -1,85 +1,88 @@
 <div class="modal">
   <div class="modal-content" appClickOutside (clickOutside)="clickedOutside()">
-    <div class="d-flex justify-content-between">
-      <span class="close" [routerLink]="['/hotels/', { outlets: { modal: null } }]">&times;</span>
-      <button mat-stroked-button color="primary">{{'Clear' | translate}}</button>
-    </div>
-    <div class="d-flex justify-content-center mt-3">
-      <div>
-        <div class="d-flex justify-content-center">
-          <mat-form-field appearance="fill" class="input-sizer">
-            <mat-label>{{'Property name' | translate}}</mat-label>
-            <input
-              name="email"
-              autocomplete="off"
-              matInput placeholder="{{'e.g. Paradise' | translate}}"
-              required
-            >
-          </mat-form-field>
-        </div>
-        <div class="d-flex flex-column">
-          <p class="fw-semibold">{{'Property type' | translate}}</p>
-          <mat-checkbox [color]="'primary'">{{'Apartment' | translate}}</mat-checkbox>
-          <mat-checkbox [color]="'primary'">{{'Hotel' | translate}}</mat-checkbox>
-          <mat-checkbox [color]="'primary'">{{'Hostel' | translate}}</mat-checkbox>
-        </div>
-        <div class="d-flex flex-column mt-4">
-          <p class="fw-semibold">{{"Price per night" | translate}}</p>
-          <div class="d-flex flex-wrap gap-3">
-            <p class="fw-semibold">400$</p>
-            <mat-slider min="50" step="50" max="500" discrete class="w-50">
-              <input matSliderThumb>
-            </mat-slider>
+    {{form.value | json}}
+    <form [formGroup]="form">
+      <div class="d-flex justify-content-between">
+        <span class="close" [routerLink]="['/hotels/', { outlets: { modal: null } }]">&times;</span>
+        <button (click)="clearModal()" type="reset" mat-stroked-button color="primary">{{'Clear' | translate}}</button>
+      </div>
+      <div class="d-flex justify-content-center mt-3">
+        <div>
+          <div class="d-flex justify-content-center">
+            <mat-form-field appearance="fill" class="input-sizer">
+              <mat-label>{{'Property name' | translate}}</mat-label>
+              <input
+                name="email"
+                autocomplete="off"
+                matInput placeholder="{{'e.g. Paradise' | translate}}"
+                formControlName="propertyName"
+              >
+            </mat-form-field>
           </div>
-        </div>
-        <div class="d-flex flex-column mt-4">
-          <p class="fw-semibold">{{'Property class' | translate}}</p>
-          <div class="d-flex flex-wrap gap-3">
-            <mat-checkbox [color]="'primary'">1 &bigstar;</mat-checkbox>
-            <mat-checkbox [color]="'primary'">2 &bigstar;</mat-checkbox>
-            <mat-checkbox [color]="'primary'">3 &bigstar;</mat-checkbox>
-            <mat-checkbox [color]="'primary'">4 &bigstar;</mat-checkbox>
-            <mat-checkbox [color]="'primary'">5 &bigstar;</mat-checkbox>
+          <div class="d-flex flex-column">
+            <p class="fw-semibold">{{'Property type' | translate}}</p>
+            <mat-checkbox formControlName="apartment" [color]="'primary'">{{'Apartment' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="hotel" [color]="'primary'">{{'Hotel' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="hostel" [color]="'primary'">{{'Hostel' | translate}}</mat-checkbox>
           </div>
-        </div>
-        <div class="mt-4">
-          <p class="fw-semibold">{{'Guest rating' | translate}}</p>
-          <mat-radio-group [color]="'primary'" class="d-flex flex-column">
-            <mat-radio-button value="1">{{'Any' | translate}}</mat-radio-button>
-            <mat-radio-button value="2">{{'Wonderful' | translate}} 9+</mat-radio-button>
-            <mat-radio-button value="3">{{'Very good' | translate}} 8+</mat-radio-button>
-            <mat-radio-button value="4">{{'Good' | translate}} 7+</mat-radio-button>
-          </mat-radio-group>
-        </div>
-        <div class="d-flex flex-column mt-4">
-          <p class="fw-semibold">{{'Meal plans available' | translate}}</p>
-          <mat-checkbox [color]="'primary'">{{'Breakfast included' | translate}}</mat-checkbox>
-          <mat-checkbox [color]="'primary'">{{'Lunch included' | translate}}</mat-checkbox>
-          <mat-checkbox [color]="'primary'">{{'Dinner included' | translate}}</mat-checkbox>
-          <mat-checkbox [color]="'primary'">{{'All-inclusive' | translate}}</mat-checkbox>
-        </div>
-        <div class="d-flex flex-column mt-4">
-          <p class="fw-semibold">{{'Place' | translate}}</p>
-          <mat-radio-group [color]="'primary'" aria-label="Select an option" class="d-flex gap-3 flex-wrap">
-            <mat-radio-button value="1">{{'Any' | translate}}</mat-radio-button>
-            <mat-radio-button value="2">{{'City center' | translate}}</mat-radio-button>
-            <mat-radio-button value="3">{{'Not city center' | translate}}</mat-radio-button>
-          </mat-radio-group>
-        </div>
-        <div class="d-flex flex-column mt-4 mb-4">
-          <p class="fw-semibold">{{'Amenities' | translate}}</p>
-          <mat-checkbox [color]="'primary'">{{'Parking' | translate}}</mat-checkbox>
-          <mat-checkbox [color]="'primary'">{{'Pool' | translate}}</mat-checkbox>
-          <mat-checkbox [color]="'primary'">{{'Spa' | translate}}</mat-checkbox>
-          <mat-checkbox [color]="'primary'">{{'Pet-friendly' | translate}}</mat-checkbox>
-          <mat-checkbox [color]="'primary'">{{'WiFi included' | translate}}</mat-checkbox>
-          <mat-checkbox [color]="'primary'">{{'Air conditioned' | translate}}</mat-checkbox>
-          <mat-checkbox [color]="'primary'">{{'Restaurant' | translate}}</mat-checkbox>
-          <mat-checkbox [color]="'primary'">{{'Sea view' | translate}}</mat-checkbox>
-          <mat-checkbox [color]="'primary'">{{'Gym' | translate}}</mat-checkbox>
+          <div class="d-flex flex-column mt-4">
+            <p class="fw-semibold">{{"Price per night" | translate}}</p>
+            <div class="d-flex flex-wrap gap-3">
+              <p class="fw-semibold">{{form.value.price}}$</p>
+              <mat-slider min="50" step="50" max="500" discrete class="w-50">
+                <input formControlName="price" matSliderThumb>
+              </mat-slider>
+            </div>
+          </div>
+          <div class="d-flex flex-column mt-4">
+            <p class="fw-semibold">{{'Property class' | translate}}</p>
+            <div class="d-flex flex-wrap gap-3">
+              <mat-checkbox formControlName="star1" [color]="'primary'">1 &bigstar;</mat-checkbox>
+              <mat-checkbox formControlName="star2" [color]="'primary'">2 &bigstar;</mat-checkbox>
+              <mat-checkbox formControlName="star3" [color]="'primary'">3 &bigstar;</mat-checkbox>
+              <mat-checkbox formControlName="star4" [color]="'primary'">4 &bigstar;</mat-checkbox>
+              <mat-checkbox formControlName="star5" [color]="'primary'">5 &bigstar;</mat-checkbox>
+            </div>
+          </div>
+          <div class="mt-4">
+            <p class="fw-semibold">{{'Guest rating' | translate}}</p>
+            <mat-radio-group formControlName="rating" [color]="'primary'" class="d-flex flex-column">
+              <mat-radio-button value="1">{{'Any' | translate}}</mat-radio-button>
+              <mat-radio-button value="2">{{'Wonderful' | translate}} 9+</mat-radio-button>
+              <mat-radio-button value="3">{{'Very good' | translate}} 8+</mat-radio-button>
+              <mat-radio-button value="4">{{'Good' | translate}} 7+</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="d-flex flex-column mt-4">
+            <p class="fw-semibold">{{'Meal plans available' | translate}}</p>
+            <mat-checkbox formControlName="breakfast" [color]="'primary'">{{'Breakfast included' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="lunch" [color]="'primary'">{{'Lunch included' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="dinner" [color]="'primary'">{{'Dinner included' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="all_inclusive" [color]="'primary'">{{'All-inclusive' | translate}}</mat-checkbox>
+          </div>
+          <div class="d-flex flex-column mt-4">
+            <p class="fw-semibold">{{'Place' | translate}}</p>
+            <mat-radio-group formControlName="place" [color]="'primary'" aria-label="Select an option" class="d-flex gap-3 flex-wrap">
+              <mat-radio-button value="1">{{'Any' | translate}}</mat-radio-button>
+              <mat-radio-button value="2">{{'City center' | translate}}</mat-radio-button>
+              <mat-radio-button value="3">{{'Not city center' | translate}}</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="d-flex flex-column mt-4 mb-4">
+            <p class="fw-semibold">{{'Amenities' | translate}}</p>
+            <mat-checkbox formControlName="parking" [color]="'primary'">{{'Parking' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="pool" [color]="'primary'">{{'Pool' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="spa" [color]="'primary'">{{'Spa' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="pet_friendly" [color]="'primary'">{{'Pet-friendly' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="wifi" [color]="'primary'">{{'WiFi included' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="air_conditioned" [color]="'primary'">{{'Air conditioned' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="restaurant" [color]="'primary'">{{'Restaurant' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="sea_view" [color]="'primary'">{{'Sea view' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="gym" [color]="'primary'">{{'Gym' | translate}}</mat-checkbox>
+          </div>
         </div>
       </div>
-    </div>
-    <button class="done-button" mat-raised-button color="primary">{{'Done' | translate}}</button>
+    </form>
+    <button (click)="onSubmit()" class="done-button" mat-raised-button color="primary">{{'Done' | translate}}</button>
   </div>
 </div>
