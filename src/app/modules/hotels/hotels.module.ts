@@ -20,22 +20,22 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     HotelsComponent,
     FilterComponent
   ],
-    imports: [
-        CommonModule,
-        HotelsRoutingModule,
-        TranslateModule,
-        MatSelectModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatButtonModule,
-        SharedModule,
-        MatInputModule,
-        MatCheckboxModule,
-        MatRadioModule,
-        MatSliderModule,
-        FormsModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    CommonModule,
+    HotelsRoutingModule,
+    TranslateModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    SharedModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatSliderModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [
     {
       provide: MAT_DATE_LOCALE,

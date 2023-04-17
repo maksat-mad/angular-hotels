@@ -20,7 +20,7 @@ export class FilterComponent implements OnInit {
     apartment: [false],
     hotel: [false],
     hostel: [false],
-    price: [50],
+    price: [500],
     star1: [false],
     star2: [false],
     star3: [false],

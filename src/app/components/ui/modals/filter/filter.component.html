@@ -1,6 +1,5 @@
 <div class="modal">
   <div class="modal-content" appClickOutside (clickOutside)="clickedOutside()">
-    {{form.value | json}}
     <form [formGroup]="form">
       <div class="d-flex justify-content-between">
         <span class="close" [routerLink]="['/hotels/', { outlets: { modal: null } }]">&times;</span>

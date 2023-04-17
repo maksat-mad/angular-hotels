@@ -19,9 +19,13 @@
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-date-range-picker #picker></mat-date-range-picker>
       </mat-form-field>
-      <button [routerLink]="['/hotels/', {outlets: { modal: 'form' }}]" mat-raised-button color="primary">{{'Filter' | translate}}</button>
+      <button [routerLink]="['/hotels/', {outlets: { modal: 'form' }}]" mat-raised-button
+              color="primary">{{'Filter' | translate}}</button>
+    </div>
+    <div *ngIf="amenities.length > 0">
+
     </div>
   </div>
 </div>
-{{filterService.filterInfoBSubject | async | json}}
+{{amenities | json}}
 <router-outlet name="modal"></router-outlet>
