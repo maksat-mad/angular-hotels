@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HotelsRoutingModule } from './hotels-routing.module';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {HotelsRoutingModule} from './hotels-routing.module';
 import {HotelsComponent} from "../../pages/hotels/hotels.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {MatSelectModule} from "@angular/material/select";
@@ -14,11 +14,13 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatSliderModule} from "@angular/material/slider";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ChipComponent} from '../../components/ui/chip/chip.component';
 
 @NgModule({
   declarations: [
     HotelsComponent,
-    FilterComponent
+    FilterComponent,
+    ChipComponent
   ],
   imports: [
     CommonModule,
