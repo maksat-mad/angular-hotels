@@ -15,7 +15,7 @@ export function fillAmenities(filter: Filter) {
     amenities.push({key: 'hostel', value: 'Hostel'} as Amenity);
   }
   if (filter.price !== 500) {
-    amenities.push({key: 'price', value: filter.price + '$'} as Amenity);
+    amenities.push({key: 'price', value: '$' + filter.price} as Amenity);
   }
   if (filter.star1) {
     amenities.push({key: 'star1', value: '1 star'} as Amenity);
@@ -32,18 +32,18 @@ export function fillAmenities(filter: Filter) {
   if (filter.star5) {
     amenities.push({key: 'star5', value: '5 star'} as Amenity);
   }
-  if (filter.rating !== 0) {
+  if (filter.rating !== '0') {
     switch (filter.rating) {
-      case 1:
+      case '1':
         amenities.push({key: 'rating', value: 'Any'} as Amenity);
         break;
-      case 2:
+      case '2':
         amenities.push({key: 'rating', value: 'Wonderful'} as Amenity);
         break;
-      case 3:
+      case '3':
         amenities.push({key: 'rating', value: 'Very good'} as Amenity);
         break;
-      case 4:
+      case '4':
         amenities.push({key: 'rating', value: 'Good'} as Amenity);
     }
   }
@@ -59,15 +59,15 @@ export function fillAmenities(filter: Filter) {
   if (filter.all_inclusive) {
     amenities.push({key: 'all_inclusive', value: 'All-inclusive'} as Amenity);
   }
-  if (filter.place !== 0) {
+  if (filter.place !== '0') {
     switch (filter.place) {
-      case 1:
+      case '1':
         amenities.push({key: 'place', value: 'Any'} as Amenity);
         break;
-      case 2:
+      case '2':
         amenities.push({key: 'place', value: 'City center'} as Amenity);
         break;
-      case 3:
+      case '3':
         amenities.push({key: 'place', value: 'Not city center'} as Amenity);
     }
   }

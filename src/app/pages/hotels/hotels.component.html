@@ -28,8 +28,8 @@
         [amenity]="amenity"
         [filter]="filter"
       ></app-chip>
+      <button mat-button color="primary" (click)="removeAllFilters()">{{'Remove all' | translate}}</button>
     </div>
   </div>
 </div>
-{{amenities | json}}
 <router-outlet name="modal"></router-outlet>

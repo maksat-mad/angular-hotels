@@ -14,10 +14,15 @@ export class HotelsComponent implements OnDestroy {
   todayDate: Date = new Date();
   amenities: Amenity[] = [];
   filter: Filter = defaultFilter;
-  filterInfoBSubject = inject(FilterService).filterInfoBSubject.subscribe((filter) => {
+  filterService = inject(FilterService);
+  filterInfoBSubject = this.filterService.filterInfoBSubject.subscribe((filter) => {
     this.filter = filter;
     this.amenities = fillAmenities(filter);
   });
+
+  removeAllFilters() {
+    this.filterService.setFilter(defaultFilter);
+  }
 
   ngOnDestroy(): void {
     this.filterInfoBSubject.unsubscribe();

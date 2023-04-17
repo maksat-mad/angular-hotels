@@ -95,5 +95,12 @@
   "Gym": "Gym",
   "Done": "Done",
   "Property name": "Property name",
-  "e.g. Paradise": "e.g. Paradise"
+  "e.g. Paradise": "e.g. Paradise",
+
+  "Remove all": "Remove all",
+  "1 star": "1 star",
+  "2 star": "2 star",
+  "3 star": "3 star",
+  "4 star": "4 star",
+  "5 star": "5 star"
 }

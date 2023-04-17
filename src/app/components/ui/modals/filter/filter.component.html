@@ -27,7 +27,7 @@
           <div class="d-flex flex-column mt-4">
             <p class="fw-semibold">{{"Price per night" | translate}}</p>
             <div class="d-flex flex-wrap gap-3">
-              <p class="fw-semibold">{{form.value.price}}$</p>
+              <p class="fw-semibold">${{form.value.price}}</p>
               <mat-slider min="50" step="50" max="500" discrete class="w-50">
                 <input formControlName="price" matSliderThumb>
               </mat-slider>
