@@ -1,0 +1,25 @@
+.card {
+  background-color: white;
+  margin: 5px 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  cursor: pointer;
+}
+
+.card-img {
+  width: 200px;
+  height: 200px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+@media(max-width: 600px) {
+  .card-img {
+    width: 125px;
+    height: 250px;
+    object-fit: cover;
+  }
+}

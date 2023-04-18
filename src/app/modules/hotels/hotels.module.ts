@@ -15,12 +15,14 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatSliderModule} from "@angular/material/slider";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ChipComponent} from '../../components/ui/chip/chip.component';
+import {CardComponent} from '../../components/ui/card/card.component';
 
 @NgModule({
   declarations: [
     HotelsComponent,
     FilterComponent,
-    ChipComponent
+    ChipComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
