@@ -22,7 +22,6 @@ export class SignUpComponent {
   }
 
   signUp() {
-    this.authService.isLoading = true;
     this.authService.signUp(this.signUpInfo.email, this.signUpInfo.password);
   }
 

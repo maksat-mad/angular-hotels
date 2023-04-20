@@ -1,24 +1,31 @@
-import {Injectable} from '@angular/core';
-import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import {inject, Injectable} from '@angular/core';
+import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut} from "firebase/auth";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  isAuthenticated = false;
+  router = inject(Router);
   isLoading = false;
   hasError = false;
   isSuccess = false;
 
+  isAuthenticated() {
+    const user = getAuth().currentUser;
+    return !!user;
+  }
+
   signUp(email: string, password: string) {
-    return createUserWithEmailAndPassword(getAuth(), email, password)
+    this.hasError = false;
+    this.isLoading = true;
+    createUserWithEmailAndPassword(getAuth(), email, password)
       .then(() => {
         this.isSuccess = true;
-        this.isAuthenticated = true;
       })
       .catch(() => {
         this.hasError = true;
-        this.isAuthenticated = false;
+        this.isSuccess = false;
       })
       .finally(() => {
         this.isLoading = false;
@@ -26,6 +33,24 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    return signInWithEmailAndPassword(getAuth(), email, password);
+    this.hasError = false;
+    this.isLoading = true;
+    signInWithEmailAndPassword(getAuth(), email, password)
+      .then(() => {
+        this.router.navigate(['/profile']);
+      })
+      .catch(() => {
+        this.hasError = true;
+      })
+      .finally(() => {
+        this.isLoading = false;
+      });
+  }
+
+  logout() {
+    signOut(getAuth())
+      .then(() => {
+        this.router.navigate(['/auth/login']);
+      });
   }
 }

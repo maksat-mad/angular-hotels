@@ -38,8 +38,9 @@
             </li>
             <a routerLink="/hotels"><li>{{'Hotels' | translate}}</li></a>
             <a routerLink="/about-us"><li>{{'About' | translate}}</li></a>
-            <a *ngIf="authService.isAuthenticated" routerLink="/"><li>{{'Profile' | translate}}</li></a>
-            <a *ngIf="!authService.isAuthenticated" class="text-primary" routerLink="/auth"><li>{{'Login' | translate}}</li></a>
+            <a *ngIf="authService.isAuthenticated()" routerLink="/"><li>{{'Profile' | translate}}</li></a>
+            <a *ngIf="!authService.isAuthenticated()" routerLink="/auth"><li>{{'Login' | translate}}</li></a>
+            <a *ngIf="authService.isAuthenticated()" class="text-danger cursor-pointer" (click)="logout()"><li>{{'Logout' | translate}}</li></a>
           </ul>
         </div>
       </div>

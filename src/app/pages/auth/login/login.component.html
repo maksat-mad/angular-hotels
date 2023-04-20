@@ -3,9 +3,9 @@
     <div class="d-flex justify-content-center">
       <h1>{{'Login' | translate}}</h1>
     </div>
-    <div *ngIf="isLoading || hasError" class="d-flex justify-content-center m-3 fw-semibold">
-      <p *ngIf="hasError" class="red">(!) {{'Failed to login, wrong email or password' | translate}}</p>
-      <p *ngIf="isLoading" class="text-primary">{{'Loading' | translate}}...</p>
+    <div *ngIf="authService.isLoading || authService.hasError" class="d-flex justify-content-center m-3 fw-semibold">
+      <p *ngIf="authService.hasError" class="red">(!) {{'Failed to login, wrong email or password' | translate}}</p>
+      <p *ngIf="authService.isLoading" class="text-primary">{{'Loading' | translate}}...</p>
     </div>
     <div class="d-flex justify-content-center">
       <form (keydown.enter)="$event.preventDefault()" #ngForm="ngForm" (ngSubmit)="login()">
@@ -44,10 +44,10 @@
         <div class="d-flex justify-content-center mt-3">
           <button [disabled]="ngForm.invalid" type="submit" mat-raised-button
                   color="primary">
-            <ng-container *ngIf="!isLoading">
+            <ng-container *ngIf="!authService.isLoading">
               {{'Login' | translate}}
             </ng-container>
-            <ng-container *ngIf="isLoading">
+            <ng-container *ngIf="authService.isLoading">
               {{'Loading' | translate}}
             </ng-container>
           </button>

@@ -31,4 +31,8 @@ export class HeaderComponent {
     this.menuVariable = false;
     this.menu_icon_variable = false;
   }
+
+  logout() {
+    this.authService.logout();
+  }
 }

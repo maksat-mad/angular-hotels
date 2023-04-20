@@ -104,5 +104,6 @@
   "4 star": "4 star",
   "5 star": "5 star",
 
-  "You have successfully registered in the system, log in": "You have successfully registered in the system, log in"
+  "You have successfully registered in the system, log in": "You have successfully registered in the system, log in",
+  "Logout": "Logout"
 }

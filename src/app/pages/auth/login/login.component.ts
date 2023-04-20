@@ -1,7 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {LoginInfo} from "../../../models/auth/AuthInfo";
 import {AuthService} from "../../../services/auth.service";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -9,10 +8,7 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent {
   authService = inject(AuthService);
-  router = inject(Router);
   hide = true;
-  isLoading = false;
-  hasError = false;
 
   loginInfo: LoginInfo = {
     email: '',
@@ -20,14 +16,6 @@ export class LoginComponent {
   }
 
   login() {
-    this.isLoading = true;
-    this.authService.login(this.loginInfo.email, this.loginInfo.password)
-      .then(() => this.router.navigate(['/profile']))
-      .catch(() => {
-        this.hasError = true;
-      })
-      .finally(() => {
-        this.isLoading = false;
-      });
+    this.authService.login(this.loginInfo.email, this.loginInfo.password);
   }
 }
