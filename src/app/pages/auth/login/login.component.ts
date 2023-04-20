@@ -22,7 +22,7 @@ export class LoginComponent {
   login() {
     this.isLoading = true;
     this.authService.login(this.loginInfo.email, this.loginInfo.password)
-      .then(() => this.router.navigate(['/hotels']))
+      .then(() => this.router.navigate(['/profile']))
       .catch(() => {
         this.hasError = true;
       })

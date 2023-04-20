@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import {TranslateService} from "@ngx-translate/core";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
+  authService = inject(AuthService);
   menu_icon_variable: boolean = false;
   menuVariable: boolean = false;
 

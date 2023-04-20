@@ -11,9 +11,6 @@ export class SignUpComponent {
   hide = true;
   hideConfirm = true;
   confirmPassword = '';
-  isLoading = false;
-  hasError = false;
-  isSuccess = false;
 
   signUpInfo: SignUpInfo = {
     firstname: '',
@@ -25,17 +22,8 @@ export class SignUpComponent {
   }
 
   signUp() {
-    this.isLoading = true;
-    this.authService.signUp(this.signUpInfo.email, this.signUpInfo.password)
-      .then(() => {
-        this.isSuccess = true;
-      })
-      .catch(() => {
-        this.hasError = true;
-      })
-      .finally(() => {
-        this.isLoading = false;
-      });
+    this.authService.isLoading = true;
+    this.authService.signUp(this.signUpInfo.email, this.signUpInfo.password);
   }
 
   passwordChange(password: string) {
