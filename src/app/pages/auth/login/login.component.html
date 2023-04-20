@@ -3,12 +3,12 @@
     <div class="d-flex justify-content-center">
       <h1>{{'Login' | translate}}</h1>
     </div>
-    <div class="d-flex justify-content-center m-3 fw-semibold">
-      <p class="red">(!) {{'Failed to login, wrong email or password' | translate}}</p>
-      <p class="text-primary">{{'Loading' | translate}}...</p>
+    <div *ngIf="isLoading || hasError" class="d-flex justify-content-center m-3 fw-semibold">
+      <p *ngIf="hasError" class="red">(!) {{'Failed to login, wrong email or password' | translate}}</p>
+      <p *ngIf="isLoading" class="text-primary">{{'Loading' | translate}}...</p>
     </div>
     <div class="d-flex justify-content-center">
-      <form (keydown.enter)="$event.preventDefault()" #ngForm="ngForm" (ngSubmit)="login(ngForm)">
+      <form (keydown.enter)="$event.preventDefault()" #ngForm="ngForm" (ngSubmit)="login()">
         <div class="row input-sizer">
           <mat-form-field appearance="fill">
             <mat-label>{{'Email' | translate}}</mat-label>
@@ -43,7 +43,14 @@
         </div>
         <div class="d-flex justify-content-center mt-3">
           <button [disabled]="ngForm.invalid" type="submit" mat-raised-button
-                  color="primary">{{'Login' | translate}}</button>
+                  color="primary">
+            <ng-container *ngIf="!isLoading">
+              {{'Login' | translate}}
+            </ng-container>
+            <ng-container *ngIf="isLoading">
+              {{'Loading' | translate}}
+            </ng-container>
+          </button>
         </div>
       </form>
     </div>
