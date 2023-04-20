@@ -128,7 +128,14 @@
             </mat-form-field>
           </div>
           <div class="d-flex justify-content-center">
-            <button [disabled]="ngForm.invalid" type="submit" mat-raised-button color="primary">{{'Sign Up' | translate}}</button>
+            <button [disabled]="ngForm.invalid" type="submit" mat-raised-button color="primary">
+              <ng-container *ngIf="!isLoading">
+                {{'Sign Up' | translate}}
+              </ng-container>
+              <ng-container *ngIf="isLoading">
+                {{'Loading' | translate}}
+              </ng-container>
+            </button>
           </div>
         </form>
       </div>

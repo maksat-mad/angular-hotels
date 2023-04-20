@@ -35,7 +35,7 @@ export class SignUpComponent {
       })
       .finally(() => {
         this.isLoading = false;
-      })
+      });
   }
 
   passwordChange(password: string) {
