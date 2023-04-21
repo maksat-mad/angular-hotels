@@ -7,9 +7,6 @@ import {Router} from "@angular/router";
 })
 export class AuthService {
   router = inject(Router);
-  isLoading = false;
-  hasError = false;
-  isSuccess = false;
 
   isAuthenticated() {
     const user = getAuth().currentUser;
@@ -17,34 +14,11 @@ export class AuthService {
   }
 
   signUp(email: string, password: string) {
-    this.hasError = false;
-    this.isLoading = true;
-    createUserWithEmailAndPassword(getAuth(), email, password)
-      .then(() => {
-        this.isSuccess = true;
-      })
-      .catch(() => {
-        this.hasError = true;
-        this.isSuccess = false;
-      })
-      .finally(() => {
-        this.isLoading = false;
-      });
+    return createUserWithEmailAndPassword(getAuth(), email, password);
   }
 
   login(email: string, password: string) {
-    this.hasError = false;
-    this.isLoading = true;
-    signInWithEmailAndPassword(getAuth(), email, password)
-      .then(() => {
-        this.router.navigate(['/profile']);
-      })
-      .catch(() => {
-        this.hasError = true;
-      })
-      .finally(() => {
-        this.isLoading = false;
-      });
+    return signInWithEmailAndPassword(getAuth(), email, password);
   }
 
   logout() {
