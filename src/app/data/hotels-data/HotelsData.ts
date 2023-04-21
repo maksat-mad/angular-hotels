@@ -2,9 +2,9 @@ import {Filter, Selector} from "../../models/hotels/HotelsInfo";
 
 export const cities: Selector[] = [
   {value: 1, viewValue: 'Sydney'},
-  {value: 2, viewValue: 'Melbourne'},
-  {value: 3, viewValue: 'Brisbane'},
-  {value: 4, viewValue: 'Perth'},
+  {value: 2, viewValue: 'Perth'},
+  {value: 3, viewValue: 'Melbourne'},
+  {value: 4, viewValue: 'Brisbane'},
   {value: 5, viewValue: 'Adelaide'},
   {value: 6, viewValue: 'Canberra'},
   {value: 7, viewValue: 'Hobart'},
