@@ -15,6 +15,7 @@
             <input
               #emailControl="ngModel"
               appEmailValidator
+              appRegisteredEmailValidator
               name="email"
               matInput placeholder="example@exp.com"
               [(ngModel)]="loginInfo.email"

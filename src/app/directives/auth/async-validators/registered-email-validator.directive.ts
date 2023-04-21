@@ -4,16 +4,16 @@ import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs";
 
 @Directive({
-  selector: '[appForgotPasswordValidator]',
+  selector: '[appRegisteredEmailValidator]',
   providers: [
     {
       provide: NG_ASYNC_VALIDATORS,
-      useExisting: ForgotPasswordValidatorDirective,
+      useExisting: RegisteredEmailValidatorDirective,
       multi: true
     }
   ]
 })
-export class ForgotPasswordValidatorDirective implements Validator {
+export class RegisteredEmailValidatorDirective implements Validator {
 
   private httpClient = inject(HttpClient);
   validate(control: AbstractControl): ValidationErrors | null {

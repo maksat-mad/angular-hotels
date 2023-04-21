@@ -16,7 +16,7 @@ import {PasswordValidatorDirective} from "../../directives/auth/validators/passw
 import {PhoneValidatorDirective} from '../../directives/auth/validators/phone-validator.directive';
 import {ConfirmPasswordValidatorDirective} from '../../directives/auth/validators/confirm-password-validator.directive';
 import {SignupEmailValidatorDirective} from '../../directives/auth/async-validators/signup-email-validator.directive';
-import {ForgotPasswordValidatorDirective} from '../../directives/auth/async-validators/forgot-password-validator.directive';
+import {RegisteredEmailValidatorDirective} from '../../directives/auth/async-validators/registered-email-validator.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import {ForgotPasswordValidatorDirective} from '../../directives/auth/async-vali
     PhoneValidatorDirective,
     ConfirmPasswordValidatorDirective,
     SignupEmailValidatorDirective,
-    ForgotPasswordValidatorDirective
+    RegisteredEmailValidatorDirective
   ],
   imports: [
     CommonModule,
