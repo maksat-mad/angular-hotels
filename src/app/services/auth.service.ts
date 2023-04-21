@@ -1,5 +1,5 @@
 import {inject, Injectable} from '@angular/core';
-import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut} from "firebase/auth";
+import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut, sendPasswordResetEmail} from "firebase/auth";
 import {Router} from "@angular/router";
 
 @Injectable({
@@ -21,10 +21,18 @@ export class AuthService {
     return signInWithEmailAndPassword(getAuth(), email, password);
   }
 
+  sendPasswordResetEmail(email: string) {
+    return sendPasswordResetEmail(getAuth(), email);
+  }
+
   logout() {
     signOut(getAuth())
       .then(() => {
         this.router.navigate(['/auth/login']);
       });
+  }
+
+  logoutForSignUp() {
+    signOut(getAuth());
   }
 }

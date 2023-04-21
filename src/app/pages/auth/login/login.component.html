@@ -4,7 +4,7 @@
       <h1>{{'Login' | translate}}</h1>
     </div>
     <div *ngIf="isLoading || hasError" class="d-flex justify-content-center m-3 fw-semibold">
-      <p *ngIf="hasError" class="red">(!) {{'Failed to login, wrong email or password' | translate}}</p>
+      <p *ngIf="hasError" class="red">{{'Failed to login, wrong email or password' | translate}}</p>
       <p *ngIf="isLoading" class="text-primary">{{'Loading' | translate}}...</p>
     </div>
     <div class="d-flex justify-content-center">
@@ -43,14 +43,7 @@
         </div>
         <div class="d-flex justify-content-center mt-3">
           <button [disabled]="ngForm.invalid" type="submit" mat-raised-button
-                  color="primary">
-            <ng-container *ngIf="!isLoading">
-              {{'Login' | translate}}
-            </ng-container>
-            <ng-container *ngIf="isLoading">
-              {{'Loading' | translate}}
-            </ng-container>
-          </button>
+                  color="primary">{{'Login' | translate}}</button>
         </div>
       </form>
     </div>

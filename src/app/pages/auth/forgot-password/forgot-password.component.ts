@@ -1,6 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {NgForm} from "@angular/forms";
 import {CurrentPageService} from "../../../services/current-page.service";
+import {AuthService} from "../../../services/auth.service";
 
 @Component({
   selector: 'app-forgot-password',
@@ -8,11 +8,29 @@ import {CurrentPageService} from "../../../services/current-page.service";
 })
 export class ForgotPasswordComponent implements OnInit {
   currentPageService = inject(CurrentPageService);
+  authService = inject(AuthService);
   email = '';
+  isLoading = false;
+  hasError = false;
+  isSuccess = false;
+
   ngOnInit(): void {
     this.currentPageService.currentPage = 4;
   }
-  resetPassword(form: NgForm) {
-    console.log(form.value);
+
+  resetPassword() {
+    this.hasError = false;
+    this.isSuccess = false;
+    this.isLoading = true;
+    this.authService.sendPasswordResetEmail(this.email)
+      .then(() => {
+        this.isSuccess = true;
+      })
+      .catch(() => {
+        this.hasError = true;
+      })
+      .finally(() => {
+        this.isLoading = false;
+      });
   }
 }

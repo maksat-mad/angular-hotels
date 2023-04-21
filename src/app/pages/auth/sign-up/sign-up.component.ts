@@ -36,6 +36,7 @@ export class SignUpComponent implements OnInit {
     this.authService.signUp(this.signUpInfo.email, this.signUpInfo.password)
       .then(() => {
         this.isSuccess = true;
+        this.authService.logoutForSignUp();
       })
       .catch(() => {
         this.hasError = true;
