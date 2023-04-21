@@ -105,5 +105,10 @@
   "5 star": "5 звезд",
 
   "You have successfully registered in the system, log in": "Вы успешно зарегистрированы в системе, авторизуйтесь",
-  "Logout": "Выйти"
+  "Logout": "Выйти",
+
+  "Sort by": "Сортировать по",
+  "Recommended": "Рекомендуется",
+  "Price: low to high": "Цена: от низкой к высокой",
+  "Price: high to low": "Цена: от высокой к низкой"
 }

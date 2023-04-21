@@ -1,5 +1,5 @@
 import {Component, inject, OnDestroy, OnInit} from '@angular/core';
-import {cities, defaultFilter} from "../../data/hotels-data/HotelsData";
+import {cities, sortingTypes, defaultFilter} from "../../data/hotels-data/HotelsData";
 import {FilterService} from "../../services/filter.service";
 import {Amenity, Filter} from "../../models/hotels/HotelsInfo";
 import {fillAmenities} from "../../utils/hotels-utils";
@@ -12,6 +12,7 @@ import {CurrentPageService} from "../../services/current-page.service";
 })
 export class HotelsComponent implements OnInit, OnDestroy {
   cities = cities;
+  sortingTypes = sortingTypes;
   todayDate: Date = new Date();
   amenities: Amenity[] = [];
   filter: Filter = defaultFilter;

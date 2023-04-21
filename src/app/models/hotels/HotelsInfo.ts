@@ -1,4 +1,4 @@
-export interface City {
+export interface Selector {
   value: number;
   viewValue: string;
 }

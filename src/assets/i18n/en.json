@@ -105,5 +105,10 @@
   "5 star": "5 star",
 
   "You have successfully registered in the system, log in": "You have successfully registered in the system, log in",
-  "Logout": "Logout"
+  "Logout": "Logout",
+
+  "Sort by": "Sort by",
+  "Recommended": "Recommended",
+  "Price: low to high": "Price: low to high",
+  "Price: high to low": "Price: high to low"
 }

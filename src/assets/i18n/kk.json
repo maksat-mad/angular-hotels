@@ -105,5 +105,10 @@
   "5 star": "5 жұлдыз",
 
   "You have successfully registered in the system, log in": "Сіз жүйеде сәтті тіркелдіңіз, енді жүйеге кіріңіз",
-  "Logout": "Шығу"
+  "Logout": "Шығу",
+
+  "Sort by": "Сорттау",
+  "Recommended": "Ұсынылған",
+  "Price: low to high": "Баға: төменнен жоғарыға",
+  "Price: high to low": "Баға: жоғарыдан төменге"
 }
