@@ -1,22 +1,16 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {CurrentPageService} from "../../../services/current-page.service";
+import {Component, inject} from '@angular/core';
 import {AuthService} from "../../../services/auth.service";
 
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html'
 })
-export class ForgotPasswordComponent implements OnInit {
-  currentPageService = inject(CurrentPageService);
+export class ForgotPasswordComponent {
   authService = inject(AuthService);
   email = '';
   isLoading = false;
   hasError = false;
   isSuccess = false;
-
-  ngOnInit(): void {
-    this.currentPageService.currentPage = 4;
-  }
 
   resetPassword() {
     this.hasError = false;

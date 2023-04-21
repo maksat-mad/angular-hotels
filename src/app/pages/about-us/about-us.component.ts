@@ -1,5 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {CurrentPageService} from "../../services/current-page.service";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-about-us',
@@ -7,9 +6,5 @@ import {CurrentPageService} from "../../services/current-page.service";
   styleUrls: ['./about-us.component.scss'],
   standalone: true
 })
-export class AboutUsComponent implements OnInit {
-  currentPageService = inject(CurrentPageService);
-  ngOnInit(): void {
-    this.currentPageService.currentPage = 2;
-  }
+export class AboutUsComponent {
 }
