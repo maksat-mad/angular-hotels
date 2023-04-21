@@ -36,10 +36,10 @@
                 </div>
               </div>
             </li>
-            <a routerLink="/hotels"><li>{{'Hotels' | translate}}</li></a>
-            <a routerLink="/about-us"><li>{{'About' | translate}}</li></a>
-            <a *ngIf="authService.isAuthenticated()" routerLink="/"><li>{{'Profile' | translate}}</li></a>
-            <a *ngIf="!authService.isAuthenticated()" routerLink="/auth"><li>{{'Login' | translate}}</li></a>
+            <a [ngClass]="currentPageService.currentPage === 1 ? 'text-primary' : ''" routerLink="/hotels"><li>{{'Hotels' | translate}}</li></a>
+            <a [ngClass]="currentPageService.currentPage === 2 ? 'text-primary' : ''" routerLink="/about-us"><li>{{'About' | translate}}</li></a>
+            <a [ngClass]="currentPageService.currentPage === 3 ? 'text-primary' : ''" *ngIf="authService.isAuthenticated()" routerLink="/"><li>{{'Profile' | translate}}</li></a>
+            <a [ngClass]="currentPageService.currentPage === 4 ? 'text-primary' : ''" *ngIf="!authService.isAuthenticated()" routerLink="/auth"><li>{{'Login' | translate}}</li></a>
             <a *ngIf="authService.isAuthenticated()" class="text-danger cursor-pointer" (click)="logout()"><li>{{'Logout' | translate}}</li></a>
           </ul>
         </div>

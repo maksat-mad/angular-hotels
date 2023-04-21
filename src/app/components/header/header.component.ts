@@ -1,6 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {AuthService} from "../../services/auth.service";
+import {CurrentPageService} from "../../services/current-page.service";
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,7 @@ import {AuthService} from "../../services/auth.service";
 })
 export class HeaderComponent {
   authService = inject(AuthService);
+  currentPageService = inject(CurrentPageService);
   menu_icon_variable: boolean = false;
   menuVariable: boolean = false;
 

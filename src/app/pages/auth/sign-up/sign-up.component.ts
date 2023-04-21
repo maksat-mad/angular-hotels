@@ -1,12 +1,14 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {SignUpInfo} from "../../../models/auth/AuthInfo";
 import {AuthService} from "../../../services/auth.service";
+import {CurrentPageService} from "../../../services/current-page.service";
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html'
 })
-export class SignUpComponent {
+export class SignUpComponent implements OnInit {
+  currentPageService = inject(CurrentPageService);
   authService = inject(AuthService);
   hide = true;
   hideConfirm = true;
@@ -22,6 +24,10 @@ export class SignUpComponent {
     phone: '',
     email: '',
     password: ''
+  }
+
+  ngOnInit(): void {
+    this.currentPageService.currentPage = 4;
   }
 
   signUp() {
