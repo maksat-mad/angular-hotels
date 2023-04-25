@@ -40,4 +40,8 @@ export class HotelsComponent implements OnInit, OnDestroy {
   changeSortingType(sortingType: number) {
     this.hotels = this.hotelService.getHotelsBySortingType(sortingType, this.hotels);
   }
+
+  changeCity(city: number) {
+    this.hotels = this.hotelService.getHotelsByCity(city);
+  }
 }

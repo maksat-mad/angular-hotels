@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-center align-items-center flex-wrap gap-5">
       <mat-form-field appearance="fill">
         <mat-label>{{'Going to' | translate}}</mat-label>
-        <mat-select>
+        <mat-select (selectionChange)="changeCity($event.value)">
           <mat-option *ngFor="let city of cities" [value]="city.value">
             {{city.viewValue | translate}}
           </mat-option>
@@ -40,12 +40,13 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center" *ngIf="hotels | async; let hotels">
       <div class="d-flex flex-column">
         <app-card
-          *ngFor="let hotel of hotels | async"
+          *ngFor="let hotel of hotels"
           [hotel]="hotel"
         ></app-card>
+        <h3 *ngIf="hotels.length === 0" class="text-danger">{{'No such hotel' | translate}}</h3>
       </div>
     </div>
   </div>

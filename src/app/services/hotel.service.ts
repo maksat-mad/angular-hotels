@@ -15,4 +15,8 @@ export class HotelService {
   getHotelsBySortingType(sortingType: number, hotels: Observable<Hotel[]>): Observable<Hotel[]> {
     return applySortingType(sortingType, hotels);
   }
+
+  getHotelsByCity(city: number): Observable<Hotel[]> {
+    return of(hotels.filter(h => h.city === city));
+  }
 }

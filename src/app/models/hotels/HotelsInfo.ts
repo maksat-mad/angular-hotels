@@ -44,6 +44,7 @@ export interface AmenityInfo {
 
 export interface Hotel {
   id: number,
+  city: number,
   name: string,
   img: string,
   propertyClass: string,
