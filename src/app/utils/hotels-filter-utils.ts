@@ -1,4 +1,6 @@
-import {Amenity, Filter} from "../models/hotels/HotelsInfo";
+import {Amenity, Filter, Hotel} from "../models/hotels/HotelsInfo";
+import {Observable, of} from "rxjs";
+import {hotels} from "../data/hotels-data/HotelsData";
 
 export function fillAmenities(filter: Filter) {
   const amenities: Amenity[] = [];
@@ -99,4 +101,97 @@ export function fillAmenities(filter: Filter) {
     amenities.push({key: 'gym', value: 'Gym'} as Amenity);
   }
   return amenities;
+}
+
+export function applyFilter(filter: Filter):Observable<Hotel[]> {
+  return of(hotels.filter(hotel => {
+    // property name
+    if (filter.propertyName !== '' &&
+      !hotel.name.toLowerCase().split(' ').some(name => name.startsWith(filter.propertyName.toLowerCase()))
+    ) {
+      return false;
+    }
+
+    // price
+    if (hotel.price > filter.price) {
+      return false;
+    }
+
+    // property class
+    if (filter.star1 && hotel.propertyClass !== '1') {
+      return false;
+    }
+    if (filter.star2 && hotel.propertyClass !== '2') {
+      return false;
+    }
+    if (filter.star3 && hotel.propertyClass !== '3') {
+      return false;
+    }
+    if (filter.star4 && hotel.propertyClass !== '4') {
+      return false;
+    }
+    if (filter.star5 && hotel.propertyClass !== '5') {
+      return false;
+    }
+
+    // rating
+    if (filter.rating !== '0' && filter.rating !== '1') {
+      if (+hotel.rating < 7 && (filter.rating === '4' || filter.rating === '3' || filter.rating === '2')) {
+        return false;
+      }
+      if (+hotel.rating < 8 && (filter.rating === '3' || filter.rating === '2')) {
+        return false;
+      }
+      if (+hotel.rating < 9 && filter.rating === '2') {
+        return false;
+      }
+    }
+
+    // place
+    if (filter.place !== '0' && filter.place !== '1' && filter.place !== hotel.locationType) {
+      return false;
+    }
+
+    // amenities
+    const filterAmenities = [];
+    if (filter.parking) {
+      filterAmenities.push('1');
+    }
+    if (filter.pool) {
+      filterAmenities.push('2');
+    }
+    if (filter.spa) {
+      filterAmenities.push('3');
+    }
+    if (filter.pet_friendly) {
+      filterAmenities.push('4');
+    }
+    if (filter.wifi) {
+      filterAmenities.push('5');
+    }
+    if (filter.air_conditioned) {
+      filterAmenities.push('6');
+    }
+    if (filter.restaurant) {
+      filterAmenities.push('7');
+    }
+    if (filter.sea_view) {
+      filterAmenities.push('8');
+    }
+    if (filter.gym) {
+      filterAmenities.push('9');
+    }
+
+    if (filterAmenities.length === 0) {
+      return true;
+    } else {
+      for (let amenity of filterAmenities) {
+        if (hotel.amenities.includes(amenity)) {
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }));
 }

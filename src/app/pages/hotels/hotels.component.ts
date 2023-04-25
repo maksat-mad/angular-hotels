@@ -22,6 +22,7 @@ export class HotelsComponent implements OnInit, OnDestroy {
   filterInfoBSubject = this.filterService.filterInfoBSubject.subscribe((filter) => {
     this.filter = filter;
     this.amenities = fillAmenities(filter);
+    this.hotels = this.hotelService.getHotelsByFilter(filter);
   });
   hotels!: Observable<Hotel[]>;
 
@@ -42,6 +43,6 @@ export class HotelsComponent implements OnInit, OnDestroy {
   }
 
   changeCity(city: number) {
-    this.hotels = this.hotelService.getHotelsByCity(city);
+    this.hotels = this.hotelService.getHotelsByCity(city, this.filter);
   }
 }

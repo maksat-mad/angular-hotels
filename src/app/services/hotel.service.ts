@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Observable, of} from "rxjs";
+import {map, Observable, of} from "rxjs";
 import {hotels} from "../data/hotels-data/HotelsData";
-import {Hotel} from "../models/hotels/HotelsInfo";
+import {Filter, Hotel} from "../models/hotels/HotelsInfo";
 import {applySortingType} from "../utils/hotels-sorting-utils";
+import {applyFilter} from "../utils/hotels-filter-utils";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,15 @@ export class HotelService {
     return applySortingType(sortingType, hotels);
   }
 
-  getHotelsByCity(city: number): Observable<Hotel[]> {
-    return of(hotels.filter(h => h.city === city));
+  getHotelsByCity(city: number, filter: Filter): Observable<Hotel[]> {
+    return applyFilter(filter).pipe(
+      map((hotels: Hotel[]) => {
+        return hotels.filter(h => h.city === city);
+      })
+    );
+  }
+
+  getHotelsByFilter(filter: Filter): Observable<Hotel[]> {
+    return applyFilter(filter);
   }
 }
