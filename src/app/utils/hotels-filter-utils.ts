@@ -118,20 +118,32 @@ export function applyFilter(filter: Filter):Observable<Hotel[]> {
     }
 
     // property class
-    if (filter.star1 && hotel.propertyClass !== '1') {
-      return false;
+    const propertyClass = [];
+    if (filter.star1) {
+      propertyClass.push('1');
     }
-    if (filter.star2 && hotel.propertyClass !== '2') {
-      return false;
+    if (filter.star2) {
+      propertyClass.push('2');
     }
-    if (filter.star3 && hotel.propertyClass !== '3') {
-      return false;
+    if (filter.star3) {
+      propertyClass.push('3');
     }
-    if (filter.star4 && hotel.propertyClass !== '4') {
-      return false;
+    if (filter.star4) {
+      propertyClass.push('4');
     }
-    if (filter.star5 && hotel.propertyClass !== '5') {
-      return false;
+    if (filter.star5) {
+      propertyClass.push('5');
+    }
+    if (propertyClass.length !== 0) {
+      let count = 0;
+      for (let star of propertyClass) {
+        if (hotel.propertyClass === star) {
+          count++;
+        }
+      }
+      if (count === 0) {
+        return false;
+      }
     }
 
     // rating
@@ -185,10 +197,14 @@ export function applyFilter(filter: Filter):Observable<Hotel[]> {
     if (filterAmenities.length === 0) {
       return true;
     } else {
+      let count = 0;
       for (let amenity of filterAmenities) {
         if (hotel.amenities.includes(amenity)) {
-          return true;
+          count++;
         }
+      }
+      if (count === filterAmenities.length) {
+        return true;
       }
     }
 

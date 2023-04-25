@@ -43,10 +43,11 @@
     <div class="d-flex justify-content-center" *ngIf="hotels | async; let hotels">
       <div class="d-flex flex-column">
         <app-card
-          *ngFor="let hotel of hotels"
+          *ngFor="let hotel of hotels | slice: (page-1) * pageSize : page * pageSize"
           [hotel]="hotel"
         ></app-card>
-        <h3 *ngIf="hotels.length === 0" class="text-danger">{{'No such hotel' | translate}}</h3>
+        <h3 *ngIf="hotels.length === 0" class="text-secondary">{{'No such hotel' | translate}}</h3>
+        <ngb-pagination class="d-flex justify-content-end mt-3" [collectionSize]="hotels.length" [pageSize]="pageSize" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
       </div>
     </div>
   </div>

@@ -16,6 +16,7 @@ import {MatSliderModule} from "@angular/material/slider";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ChipComponent} from '../../components/ui/chip/chip.component';
 import {CardComponent} from '../../components/ui/card/card.component';
+import {NgbPagination} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {CardComponent} from '../../components/ui/card/card.component';
     MatRadioModule,
     MatSliderModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbPagination
   ],
   providers: [
     {

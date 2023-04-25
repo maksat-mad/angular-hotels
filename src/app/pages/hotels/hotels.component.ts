@@ -25,6 +25,8 @@ export class HotelsComponent implements OnInit, OnDestroy {
     this.hotels = this.hotelService.getHotelsByFilter(filter);
   });
   hotels!: Observable<Hotel[]>;
+  page = 1;
+  pageSize = 4;
 
   ngOnInit() {
     this.hotels = this.hotelService.getAllHotels();
