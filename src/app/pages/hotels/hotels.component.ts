@@ -23,17 +23,21 @@ export class HotelsComponent implements OnInit, OnDestroy {
     this.filter = filter;
     this.amenities = fillAmenities(filter);
   });
-  hotels: Observable<Hotel[]> | undefined;
+  hotels!: Observable<Hotel[]>;
 
   ngOnInit() {
     this.hotels = this.hotelService.getAllHotels();
+  }
+
+  ngOnDestroy(): void {
+    this.filterInfoBSubject.unsubscribe();
   }
 
   removeAllFilters() {
     this.filterService.setFilter(defaultFilter);
   }
 
-  ngOnDestroy(): void {
-    this.filterInfoBSubject.unsubscribe();
+  changeSortingType(sortingType: number) {
+    this.hotels = this.hotelService.getHotelsBySortingType(sortingType, this.hotels);
   }
 }

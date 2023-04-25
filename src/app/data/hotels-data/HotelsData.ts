@@ -134,7 +134,7 @@ export const hotels: Hotel[] = [
     id: 1,
     name: 'Great Hotel Perth',
     img: 'perth1.jpg',
-    propertyClass: '1',
+    propertyClass: '3',
     locationType: '2',
     amenities: ['1', '2', '3', '4'],
     rating: '7',

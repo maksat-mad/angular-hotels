@@ -33,7 +33,7 @@
     <div class="d-flex justify-content-end p-4 pb-0 pt-0 mt-3">
       <mat-form-field appearance="fill">
         <mat-label>{{'Sort by' | translate}}</mat-label>
-        <mat-select [(value)]="sortingTypes[0].value">
+        <mat-select [value]="sortingTypes[0].value" (selectionChange)="changeSortingType($event.value)">
           <mat-option *ngFor="let sortingType of sortingTypes" [value]="sortingType.value">
             {{sortingType.viewValue | translate}}
           </mat-option>
