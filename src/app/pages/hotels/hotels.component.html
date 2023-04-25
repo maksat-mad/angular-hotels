@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center wrapper">
   <div>
-    <div class="d-flex justify-content-center align-items-center flex-wrap gap-5 p-3">
+    <div class="d-flex justify-content-center align-items-center flex-wrap gap-5">
       <mat-form-field appearance="fill">
         <mat-label>{{'Going to' | translate}}</mat-label>
         <mat-select>
@@ -22,7 +22,7 @@
       <button [routerLink]="['/hotels/', {outlets: { modal: 'form' }}]" mat-raised-button
               color="primary">{{'Filter' | translate}}</button>
     </div>
-    <div *ngIf="amenities.length > 0" class="d-flex justify-content-center align-items-center flex-wrap gap-2 p-3">
+    <div *ngIf="amenities.length > 0" class="d-flex justify-content-center align-items-center flex-wrap gap-2">
       <app-chip
         *ngFor="let amenity of amenities"
         [amenity]="amenity"
@@ -30,7 +30,7 @@
       ></app-chip>
       <button mat-button color="primary" (click)="removeAllFilters()">{{'Remove all' | translate}}</button>
     </div>
-    <div class="d-flex justify-content-end p-3 pt-0 pb-0 mt-3">
+    <div class="d-flex justify-content-end p-4 pb-0 pt-0 mt-3">
       <mat-form-field appearance="fill">
         <mat-label>{{'Sort by' | translate}}</mat-label>
         <mat-select [(value)]="sortingTypes[0].value">
@@ -42,11 +42,10 @@
     </div>
     <div class="d-flex justify-content-center">
       <div class="d-flex flex-column">
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
+        <app-card
+          *ngFor="let hotel of hotels | async"
+          [hotel]="hotel"
+        ></app-card>
       </div>
     </div>
   </div>

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {amenitiesInfoMap, ratingType} from "../../../data/hotels-data/HotelsData";
+import {Hotel} from "../../../models/hotels/HotelsInfo";
 
 @Component({
   selector: 'app-card',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-
+  ratingType = ratingType;
+  amenitiesInfoMap = amenitiesInfoMap;
+  @Input() hotel!: Hotel;
 }

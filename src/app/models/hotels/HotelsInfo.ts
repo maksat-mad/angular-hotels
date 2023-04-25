@@ -35,3 +35,21 @@ export interface Amenity {
   key: string,
   value: string
 }
+
+export interface AmenityInfo {
+  name: string,
+  src: string,
+  alt: string
+}
+
+export interface Hotel {
+  id: number,
+  name: string,
+  img: string,
+  propertyClass: string,
+  locationType: string,
+  amenities: string[],
+  rating: string,
+  numberOfReviews: number,
+  price: number
+}
