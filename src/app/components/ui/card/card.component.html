@@ -1,5 +1,5 @@
 <div class="card truncate-long-texts animate-img-hover">
-  <a [routerLink]="'/'" class="text-decoration-none text-dark">
+  <a [routerLink]="['/hotels', hotel.id]" class="text-decoration-none text-dark">
     <div class="d-flex">
       <img class="card-img" src="{{'assets/hotels-img/' + hotel.img}}" alt="hotel-picture"/>
       <div class="d-flex flex-column p-3 w-100">
@@ -16,7 +16,7 @@
           />
       </span>
         <div class="d-flex justify-content-between align-items-center flex-wrap mb-0 pb-0 mt-3 gap-4">
-          <p class="p-0 m-0"><b>{{hotel.rating}}</b>/10 {{ratingType.get(hotel.rating)! | translate}} ({{hotel.numberOfReviews}} {{'review' | translate}})</p>
+          <p class="p-0 m-0"><b>{{hotel.rating}}</b>/10 {{ratingType.get(hotel.rating)! | translate}} ({{hotel.numberOfReviews}} {{'reviews' | translate}})</p>
           <div>
             <p class="p-0 m-0 price">${{hotel.price}}</p>
             <p class="p-0 m-0">{{'for 1 night' | translate}}</p>

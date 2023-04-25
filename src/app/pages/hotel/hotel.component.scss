@@ -1,0 +1,13 @@
+.hotel-img {
+  width: 300px;
+}
+
+.width-500 {
+  width: 500px;
+}
+
+@media(max-width: 400px) {
+  .hotel-img {
+    width: 200px;
+  }
+}

@@ -11,6 +11,17 @@ export const cities: Selector[] = [
   {value: 8, viewValue: 'Darwin'}
 ];
 
+export const citiesMap = new Map([
+  [1, 'Perth'],
+  [2, 'Sydney'],
+  [3, 'Melbourne'],
+  [4, 'Brisbane'],
+  [5, 'Adelaide'],
+  [6, 'Canberra'],
+  [7, 'Hobart'],
+  [8, 'Darwin']
+]);
+
 export const sortingTypes: Selector[] = [
   {value: 1, viewValue: 'Recommended'},
   {value: 2, viewValue: 'Price: low to high'},
@@ -144,15 +155,15 @@ export const hotels: Hotel[] = [
   },
   {
     id: 2,
-    city: 1,
-    name: 'Crown Towers Perth',
-    img: 'perth2.jpg',
+    city: 2,
+    name: 'Sydney Harbour',
+    img: 'sydney2.jpg',
     propertyClass: '4',
     locationType: '3',
     amenities: ['2', '3', '4', '5'],
     rating: '8',
     numberOfReviews: 30,
-    price: 350
+    price: 450
   },
   {
     id: 3,
@@ -168,9 +179,9 @@ export const hotels: Hotel[] = [
   },
   {
     id: 4,
-    city: 1,
-    name: 'Crown Promenade Perth',
-    img: 'perth4.jpg',
+    city: 2,
+    name: 'Ridges Sydney Central',
+    img: 'sydney4.jpg',
     propertyClass: '5',
     locationType: '3',
     amenities: ['4', '5', '6', '7'],
@@ -192,9 +203,9 @@ export const hotels: Hotel[] = [
   },
   {
     id: 6,
-    city: 1,
-    name: 'Crown Metro Perth',
-    img: 'perth6.jpg',
+    city: 2,
+    name: 'Great Hotel Sydney',
+    img: 'sydney6.jpg',
     propertyClass: '1',
     locationType: '3',
     amenities: ['7', '8', '9', '1'],
@@ -216,9 +227,9 @@ export const hotels: Hotel[] = [
   },
   {
     id: 8,
-    city: 1,
-    name: 'Quest Ascot Perth',
-    img: 'perth8.jpg',
+    city: 2,
+    name: 'The Maxwell Sydney',
+    img: 'sydney8.jpg',
     propertyClass: '3',
     locationType: '3',
     amenities: ['9', '1', '2', '3'],
@@ -240,9 +251,9 @@ export const hotels: Hotel[] = [
   },
   {
     id: 10,
-    city: 1,
-    name: 'Country Comfort Perth',
-    img: 'perth99.jpg',
+    city: 2,
+    name: 'Travel Hotel Sydney',
+    img: 'sydney99.jpg',
     propertyClass: '5',
     locationType: '3',
     amenities: ['2', '3', '4', '5'],
@@ -264,15 +275,15 @@ export const hotels: Hotel[] = [
   },
   {
     id: 12,
-    city: 2,
-    name: 'Sydney Harbour',
-    img: 'sydney2.jpg',
+    city: 1,
+    name: 'Crown Towers Perth',
+    img: 'perth2.jpg',
     propertyClass: '4',
     locationType: '3',
     amenities: ['2', '3', '4', '5'],
     rating: '8',
     numberOfReviews: 30,
-    price: 450
+    price: 350
   },
   {
     id: 13,
@@ -288,9 +299,9 @@ export const hotels: Hotel[] = [
   },
   {
     id: 14,
-    city: 2,
-    name: 'Ridges Sydney Central',
-    img: 'sydney4.jpg',
+    city: 1,
+    name: 'Crown Promenade Perth',
+    img: 'perth4.jpg',
     propertyClass: '5',
     locationType: '3',
     amenities: ['4', '5', '6', '7'],
@@ -312,9 +323,9 @@ export const hotels: Hotel[] = [
   },
   {
     id: 16,
-    city: 2,
-    name: 'Great Hotel Sydney',
-    img: 'sydney6.jpg',
+    city: 1,
+    name: 'Crown Metro Perth',
+    img: 'perth6.jpg',
     propertyClass: '1',
     locationType: '3',
     amenities: ['7', '8', '9', '1'],
@@ -336,9 +347,9 @@ export const hotels: Hotel[] = [
   },
   {
     id: 18,
-    city: 2,
+    city: 1,
     name: 'Quest Ascot Perth',
-    img: 'sydney8.jpg',
+    img: 'perth8.jpg',
     propertyClass: '3',
     locationType: '3',
     amenities: ['9', '1', '2', '3'],
@@ -360,9 +371,9 @@ export const hotels: Hotel[] = [
   },
   {
     id: 20,
-    city: 2,
-    name: 'Travel Hotel Sydney',
-    img: 'sydney99.jpg',
+    city: 1,
+    name: 'Country Comfort Perth',
+    img: 'perth99.jpg',
     propertyClass: '5',
     locationType: '3',
     amenities: ['2', '3', '4', '5'],

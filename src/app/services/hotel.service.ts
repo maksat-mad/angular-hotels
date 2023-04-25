@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {map, Observable, of} from "rxjs";
 import {hotels} from "../data/hotels-data/HotelsData";
 import {Filter, Hotel} from "../models/hotels/HotelsInfo";
@@ -11,6 +11,14 @@ import {applyFilter} from "../utils/hotels-filter-utils";
 export class HotelService {
   getAllHotels(): Observable<Hotel[]> {
     return of(hotels);
+  }
+
+  getHotelById(id: number): Observable<Hotel | undefined> {
+    return of(hotels).pipe(
+      map((hotels: Hotel[]) => {
+        return hotels.find((hotel: Hotel) => hotel.id === id)
+      })
+    );
   }
 
   getHotelsBySortingType(sortingType: number, hotels: Observable<Hotel[]>): Observable<Hotel[]> {

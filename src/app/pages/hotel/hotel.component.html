@@ -1,0 +1,58 @@
+<div *ngIf="(hotel | async | json) === undefined ? noSuchHotel() : false"></div>
+<div class="container" *ngIf="hotel | async; let hotel">
+  <div class="row mt-5">
+    <div class="d-flex justify-content-center align-items-center flex-wrap gap-4">
+      <div class="cursor-pointer" (click)="openImageAsModal(content)">
+        <img class="hotel-img" src="{{'assets/hotels-img/' + hotel.img}}" alt="{{hotel.name}}"/>
+      </div>
+      <div class="width-500 d-flex flex-column align-items-center">
+        <h2 class="fw-semibold">{{hotel.name}}</h2>
+        <p>{{citiesMap.get(hotel.city)! | translate}}</p>
+        <p class="mb-0">{{'Guest rating' | translate}}</p>
+        <ngb-rating
+          class="star gap-1"
+          [rate]="+hotel.rating"
+          [readonly]="true"
+          [max]="10"
+        ></ngb-rating>
+        <p><b>{{hotel.rating}}</b>/10 {{ratingType.get(hotel.rating)! | translate}} ({{hotel.numberOfReviews}} {{'reviews' | translate}})</p>
+        <span class="d-flex gap-1 mb-2">
+          <p>{{'Property class' | translate}}:</p>
+          <p *ngFor="let number of [].constructor(+hotel.propertyClass)" class="star m-0 p-0">&bigstar;</p>
+        </span>
+        <p>{{'Place' | translate}}: {{(hotel.locationType === '2' ? 'City center' : 'Not city center') | translate}}</p>
+        <p>${{hotel.price}}: {{'for 1 night' | translate}}</p>
+        <div class="d-flex flex-column gap-2">
+          <span class="d-flex gap-3 justify-content-start align-items-center" *ngFor="let amenity of hotel.amenities">
+          <img
+            title="{{amenitiesInfoMap.get(amenity)!.name | translate}}"
+            src="{{'assets/amenities-icons/' + amenitiesInfoMap.get(amenity)?.src}}"
+            alt="{{amenitiesInfoMap.get(amenity)?.alt}}"
+          />
+          <p class="m-0">{{amenitiesInfoMap.get(amenity)!.name | translate}}</p>
+        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5 mb-5">
+    <button *ngIf="authService.isAuthenticated()" mat-raised-button color="primary">{{'Book' | translate}}</button>
+    <button routerLink="/auth" *ngIf="!authService.isAuthenticated()" mat-raised-button color="primary">{{'Login to Book' | translate}}</button>
+  </div>
+<!--  <div class="row mt-5" *ngIf="(this.movieService.getMoviesByGenre(movie.genres, movie.id)) | async; let movies">-->
+<!--    <h4 class="text-secondary fw-semibold">Related Movies</h4>-->
+<!--    <div *ngIf="movies.length === 0" class="d-flex justify-content-around flex-wrap gap-3 p-4">-->
+<!--      <h5 class="text-danger">No such movie</h5>-->
+<!--    </div>-->
+<!--    <div *ngIf="movies.length > 0" class="d-flex justify-content-around flex-wrap gap-3 p-4">-->
+<!--      <app-card-->
+<!--        *ngFor="let movie of movies"-->
+<!--        [movie]="movie"-->
+<!--      ></app-card>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <ng-template #content>
+    <img src="{{'assets/hotels-img/' + hotel.img}}" alt="{{hotel.name}}"/>
+  </ng-template>
+</div>

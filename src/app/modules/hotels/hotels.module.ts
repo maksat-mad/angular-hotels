@@ -16,14 +16,16 @@ import {MatSliderModule} from "@angular/material/slider";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ChipComponent} from '../../components/ui/chip/chip.component';
 import {CardComponent} from '../../components/ui/card/card.component';
-import {NgbPagination} from "@ng-bootstrap/ng-bootstrap";
+import {NgbPagination, NgbRating} from "@ng-bootstrap/ng-bootstrap";
+import {HotelComponent} from "../../pages/hotel/hotel.component";
 
 @NgModule({
   declarations: [
     HotelsComponent,
     FilterComponent,
     ChipComponent,
-    CardComponent
+    CardComponent,
+    HotelComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +42,8 @@ import {NgbPagination} from "@ng-bootstrap/ng-bootstrap";
     MatSliderModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbPagination
+    NgbPagination,
+    NgbRating
   ],
   providers: [
     {

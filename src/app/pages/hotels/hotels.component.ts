@@ -8,8 +8,7 @@ import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-hotels',
-  templateUrl: './hotels.component.html',
-  styleUrls: ['./hotels.component.scss']
+  templateUrl: './hotels.component.html'
 })
 export class HotelsComponent implements OnInit, OnDestroy {
   cities = cities;
