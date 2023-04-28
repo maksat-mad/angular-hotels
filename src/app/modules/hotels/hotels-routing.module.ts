@@ -7,26 +7,23 @@ import {HotelComponent} from "../../pages/hotel/hotel.component";
 const routes: Routes = [
   {
     path: '',
+    component: HotelsComponent,
     children: [
-      {
-        path: '',
-        component: HotelsComponent,
-      },
       {
         path: 'form',
         component: FilterComponent,
         outlet: 'modal'
-      },
-      {
-        path: ':hotelId',
-        component: HotelComponent
-      },
-      {
-        path: '**',
-        redirectTo: '',
-        pathMatch: 'full'
       }
     ]
+  },
+  {
+    path: ':hotelId',
+    component: HotelComponent
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ];
 
