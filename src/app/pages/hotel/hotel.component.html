@@ -39,19 +39,15 @@
     <button *ngIf="authService.isAuthenticated()" mat-raised-button color="primary">{{'Book' | translate}}</button>
     <button routerLink="/auth" *ngIf="!authService.isAuthenticated()" mat-raised-button color="primary">{{'Login to Book' | translate}}</button>
   </div>
-<!--  <div class="row mt-5" *ngIf="(this.movieService.getMoviesByGenre(movie.genres, movie.id)) | async; let movies">-->
-<!--    <h4 class="text-secondary fw-semibold">Related Movies</h4>-->
-<!--    <div *ngIf="movies.length === 0" class="d-flex justify-content-around flex-wrap gap-3 p-4">-->
-<!--      <h5 class="text-danger">No such movie</h5>-->
-<!--    </div>-->
-<!--    <div *ngIf="movies.length > 0" class="d-flex justify-content-around flex-wrap gap-3 p-4">-->
-<!--      <app-card-->
-<!--        *ngFor="let movie of movies"-->
-<!--        [movie]="movie"-->
-<!--      ></app-card>-->
-<!--    </div>-->
-<!--  </div>-->
-
+  <div class="d-flex justify-content-center" *ngIf="hotelService.getRelatedHotels(hotel.city, hotel.id) | async; let relatedHotels">
+    <div class="d-flex flex-column">
+      <app-card
+        *ngFor="let relatedHotel of relatedHotels"
+        [hotel]="relatedHotel"
+      ></app-card>
+      <h3 *ngIf="relatedHotels.length === 0" class="text-secondary">{{'No similar hotel' | translate}}</h3>
+    </div>
+  </div>
   <ng-template #content>
     <img src="{{'assets/hotels-img/' + hotel.img}}" alt="{{hotel.name}}"/>
   </ng-template>

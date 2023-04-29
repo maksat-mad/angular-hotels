@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {map, Observable, of} from "rxjs";
+import {map, Observable, of, take} from "rxjs";
 import {hotels} from "../data/hotels-data/HotelsData";
 import {Filter, Hotel} from "../models/hotels/HotelsInfo";
 import {applySortingType} from "../utils/hotels-sorting-utils";
@@ -30,6 +30,14 @@ export class HotelService {
       map((hotels: Hotel[]) => {
         return hotels.filter(h => h.city === city);
       })
+    );
+  }
+
+  getRelatedHotels(city: number, id: number): Observable<Hotel[]> {
+    return of(
+      hotels.filter(hotel => hotel.city === city && id !== hotel.id)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 3)
     );
   }
 
