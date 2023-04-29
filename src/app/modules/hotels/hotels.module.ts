@@ -18,6 +18,7 @@ import {ChipComponent} from '../../components/ui/chip/chip.component';
 import {CardComponent} from '../../components/ui/card/card.component';
 import {NgbPagination, NgbRating} from "@ng-bootstrap/ng-bootstrap";
 import {HotelComponent} from "../../pages/hotel/hotel.component";
+import {ExitButtonComponent} from '../../components/ui/exit-button/exit-button.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {HotelComponent} from "../../pages/hotel/hotel.component";
     FilterComponent,
     ChipComponent,
     CardComponent,
-    HotelComponent
+    HotelComponent,
+    ExitButtonComponent
   ],
   imports: [
     CommonModule,

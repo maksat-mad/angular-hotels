@@ -1,3 +1,4 @@
+<app-exit-button></app-exit-button>
 <div *ngIf="(hotel | async | json) === undefined ? noSuchHotel() : false"></div>
 <div class="container" *ngIf="hotel | async; let hotel">
   <div class="row mt-5">
