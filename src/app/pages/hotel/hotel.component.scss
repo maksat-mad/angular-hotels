@@ -11,3 +11,19 @@
     width: 200px;
   }
 }
+
+.width-resizer {
+  width: 50%;
+}
+
+@media(max-width: 980px) {
+  .width-resizer {
+    width: 75%;
+  }
+}
+
+@media(max-width: 770px) {
+  .width-resizer {
+    width: 100%;
+  }
+}

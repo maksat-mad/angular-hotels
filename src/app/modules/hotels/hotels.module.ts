@@ -19,6 +19,7 @@ import {CardComponent} from '../../components/ui/card/card.component';
 import {NgbPagination, NgbRating} from "@ng-bootstrap/ng-bootstrap";
 import {HotelComponent} from "../../pages/hotel/hotel.component";
 import {ExitButtonComponent} from '../../components/ui/exit-button/exit-button.component';
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -29,24 +30,25 @@ import {ExitButtonComponent} from '../../components/ui/exit-button/exit-button.c
     HotelComponent,
     ExitButtonComponent
   ],
-  imports: [
-    CommonModule,
-    HotelsRoutingModule,
-    TranslateModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatButtonModule,
-    SharedModule,
-    MatInputModule,
-    MatCheckboxModule,
-    MatRadioModule,
-    MatSliderModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgbPagination,
-    NgbRating
-  ],
+    imports: [
+        CommonModule,
+        HotelsRoutingModule,
+        TranslateModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatButtonModule,
+        SharedModule,
+        MatInputModule,
+        MatCheckboxModule,
+        MatRadioModule,
+        MatSliderModule,
+        FormsModule,
+        ReactiveFormsModule,
+        NgbPagination,
+        NgbRating,
+        MatExpansionModule
+    ],
   providers: [
     {
       provide: MAT_DATE_LOCALE,

@@ -37,18 +37,47 @@
     </div>
   </div>
   <div class="row mt-5 mb-5">
-    <button *ngIf="authService.isAuthenticated()" mat-raised-button color="primary">{{'Book' | translate}}</button>
     <button routerLink="/auth" *ngIf="!authService.isAuthenticated()" mat-raised-button color="primary">{{'Login to Book' | translate}}</button>
+    <mat-accordion *ngIf="authService.isAuthenticated()">
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Book Now
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form [formGroup]="bookingForm" (ngSubmit)="book()" class="d-flex justify-content-center">
+          <div class="d-flex flex-column width-resizer">
+            <mat-form-field>
+              <mat-label>Hotel Id</mat-label>
+              <input
+                type="text"
+                matInput
+                formControlName="hotelId"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>{{'Email' | translate}}</mat-label>
+              <input
+                name="email"
+                matInput
+                placeholder="example@exp.com"
+              >
+            </mat-form-field>
+          </div>
+        </form>
+      </mat-expansion-panel>
+    </mat-accordion>
   </div>
-  <div class="d-flex justify-content-center" *ngIf="hotelService.getRelatedHotels(hotel.city, hotel.id) | async; let relatedHotels">
-    <div class="d-flex flex-column">
-      <app-card
-        *ngFor="let relatedHotel of relatedHotels"
-        [hotel]="relatedHotel"
-      ></app-card>
-      <h3 *ngIf="relatedHotels.length === 0" class="text-secondary">{{'No similar hotel' | translate}}</h3>
-    </div>
-  </div>
+<!--  <div class="d-flex justify-content-center" *ngIf="hotelService.getRelatedHotels(hotel.city, hotel.id) | async; let relatedHotels">-->
+<!--    <div class="d-flex flex-column">-->
+<!--      <app-card-->
+<!--        *ngFor="let relatedHotel of relatedHotels"-->
+<!--        [hotel]="relatedHotel"-->
+<!--      ></app-card>-->
+<!--      <h3 *ngIf="relatedHotels.length === 0" class="text-secondary">{{'No similar hotel' | translate}}</h3>-->
+<!--    </div>-->
+<!--  </div>-->
   <ng-template #content>
     <img src="{{'assets/hotels-img/' + hotel.img}}" alt="{{hotel.name}}"/>
   </ng-template>
