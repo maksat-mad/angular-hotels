@@ -116,5 +116,16 @@
   "for 1 night": "на 1 ночь",
   "No such hotel": "Нет такого отеля",
   "No similar hotel": "Нет похожего отеля",
-  "Exit": "Выход"
+  "Exit": "Выход",
+
+  "Login to Book": "Войти, чтобы забронировать",
+  "Book Now": "Забронировать сейчас",
+  "Hotel Name": "Название отеля",
+  "Address": "Адрес",
+  "City": "Город",
+  "Street": "Улица",
+  "Street Number": "Номер улицы",
+  "Check-in date is required": "Требуется дата заезда",
+  "Check-out date is required": "Требуется дата выезда",
+  "Check-out date must be later than check-in date": "Дата выезда должна быть позже даты заезда"
 }

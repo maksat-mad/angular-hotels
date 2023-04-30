@@ -116,5 +116,16 @@
   "for 1 night": "for 1 night",
   "No such hotel": "No such hotel",
   "No similar hotel": "No similar hotel",
-  "Exit": "Exit"
+  "Exit": "Exit",
+
+  "Login to Book": "Login to Book",
+  "Book Now": "Book Now",
+  "Hotel Name": "Hotel Name",
+  "Address": "Address",
+  "City": "City",
+  "Street": "Street",
+  "Street Number": "Street Number",
+  "Check-in date is required": "Check-in date is required",
+  "Check-out date is required": "Check-out date is required",
+  "Check-out date must be later than check-in date": "Check-out date must be later than check-in date"
 }

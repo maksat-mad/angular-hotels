@@ -26,7 +26,7 @@ export class NavigationService implements OnDestroy{
     if (this.history.length > 0) {
       this.location.back();
     } else {
-      this.router.navigateByUrl("/");
+      this.router.navigateByUrl("/hotels");
     }
   }
 

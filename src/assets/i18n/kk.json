@@ -116,5 +116,16 @@
   "for 1 night": "1 түнге",
   "No such hotel": "Мұндай қонақ үй жоқ",
   "No similar hotel": "Ұқсас қонақүй жоқ",
-  "Exit": "Шығу"
+  "Exit": "Шығу",
+
+  "Login to Book": "Брондау үшін кіру",
+  "Book Now": "Қазір брондаңыз",
+  "Hotel Name": "Қонақ үй атауы",
+  "Address": "Мекенжай",
+  "City": "Қала",
+  "Street": "Көше",
+  "Street Number": "Көше нөмірі",
+  "Check-in date is required": "Келу күні қажет",
+  "Check-out date is required": "Кету күні қажет",
+  "Check-out date must be later than check-in date": "Кету күні келу күнінен кейін болуы керек"
 }

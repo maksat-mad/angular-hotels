@@ -7,6 +7,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {amenitiesInfoMap, citiesMap, hotels, ratingType} from "../../data/hotels-data/HotelsData";
 import {AuthService} from "../../services/auth.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {CustomValidator} from "../../utils/validators/custom-validator";
 
 @Component({
   selector: 'app-hotel',
@@ -26,6 +27,7 @@ export class HotelComponent implements OnInit {
   citiesMap = citiesMap;
   panelOpenState = false;
   bookingForm!: FormGroup;
+  todayDate: Date = new Date();
 
   ngOnInit(): void {
     this.hotel = this.route.paramMap.pipe(
@@ -33,18 +35,20 @@ export class HotelComponent implements OnInit {
     );
 
     this.bookingForm = this.fb.group({
-      hotelId: new FormControl(
-        {value: 1, disabled: true},
+      hotelName: new FormControl(
+        {value: 'Hotel Name', disabled: true},
         {validators: [Validators.required]}
       ),
-      email: ['', {validators: [Validators.required, Validators.email]}],
-      phone: ['', {validators: [Validators.required]}],
-      checkInDate: ['', {validators: [Validators.required]}],
-      checkOutDate: ['', {validators: [Validators.required]}],
+      email: ['', {validators: [CustomValidator.ValidateEmail]}],
+      phone: ['', {validators: [CustomValidator.ValidatorPhone]}],
+      bookingDate: this.fb.group({
+        checkinDate: ['', {validators: [Validators.required]}],
+        checkoutDate: ['', {validators: [Validators.required]}]
+      }, {validators: [CustomValidator.ValidatorBookingDate]}),
       address: this.fb.group({
-        city: ['', {validators: [Validators.required]}],
-        street: ['', {validators: [Validators.required]}],
-        streetNumber: ['', {validators: [Validators.required]}],
+        city: [''],
+        street: [''],
+        streetNumber: [''],
       }),
     }, {updateOn: 'blur'});
   }

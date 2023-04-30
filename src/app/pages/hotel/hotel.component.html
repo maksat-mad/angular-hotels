@@ -16,7 +16,8 @@
           [readonly]="true"
           [max]="10"
         ></ngb-rating>
-        <p><b>{{hotel.rating}}</b>/10 {{ratingType.get(hotel.rating)! | translate}} ({{hotel.numberOfReviews}} {{'reviews' | translate}})</p>
+        <p><b>{{hotel.rating}}</b>/10 {{ratingType.get(hotel.rating)! | translate}}
+          ({{hotel.numberOfReviews}} {{'reviews' | translate}})</p>
         <span class="d-flex gap-1 mb-2">
           <p>{{'Property class' | translate}}:</p>
           <p *ngFor="let number of [].constructor(+hotel.propertyClass)" class="star m-0 p-0">&bigstar;</p>
@@ -36,24 +37,26 @@
       </div>
     </div>
   </div>
+  {{bookingForm.getRawValue() | json}}
   <div class="row mt-5 mb-5">
-    <button routerLink="/auth" *ngIf="!authService.isAuthenticated()" mat-raised-button color="primary">{{'Login to Book' | translate}}</button>
+    <button routerLink="/auth" *ngIf="!authService.isAuthenticated()" mat-raised-button
+            color="primary">{{'Login to Book' | translate}}</button>
     <mat-accordion *ngIf="authService.isAuthenticated()">
       <mat-expansion-panel (opened)="panelOpenState = true"
                            (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Book Now
+            {{'Book Now' | translate}}
           </mat-panel-title>
         </mat-expansion-panel-header>
         <form [formGroup]="bookingForm" (ngSubmit)="book()" class="d-flex justify-content-center">
-          <div class="d-flex flex-column width-resizer">
+          <div class="d-flex flex-column width-resizer gap-2">
             <mat-form-field>
-              <mat-label>Hotel Id</mat-label>
+              <mat-label>{{'Hotel Name' | translate}}</mat-label>
               <input
                 type="text"
                 matInput
-                formControlName="hotelId"
+                formControlName="hotelName"
               />
             </mat-form-field>
             <mat-form-field appearance="fill">
@@ -62,22 +65,94 @@
                 name="email"
                 matInput
                 placeholder="example@exp.com"
+                formControlName="email"
               >
+              <mat-error *ngIf="bookingForm.get('email')?.errors">
+                {{bookingForm.get('email')?.errors!['msg'] | translate}}
+              </mat-error>
             </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>{{'Phone' | translate}}</mat-label>
+              <input
+                type="tel"
+                matInput
+                placeholder="+77051956916"
+                formControlName="phone"
+              >
+              <mat-error *ngIf="bookingForm.get('phone')?.errors">
+                {{bookingForm.get('phone')?.errors!['msg'] | translate}}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field formGroupName="bookingDate" appearance="fill">
+              <mat-label>{{'Enter a date range' | translate}}</mat-label>
+              <mat-date-range-input [rangePicker]="picker" [min]="todayDate">
+                <input formControlName="checkinDate" matStartDate placeholder="{{'Check-in' | translate}}">
+                <input formControlName="checkoutDate" matEndDate placeholder="{{'Check-out' | translate}}">
+              </mat-date-range-input>
+              <mat-hint>{{'Day / Month / Year' | translate}}</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+              <mat-error *ngIf="bookingForm.get('bookingDate.checkinDate')?.hasError('required')">
+                {{'Check-in date is required' | translate}}
+              </mat-error>
+              <mat-error
+                *ngIf="!bookingForm.get('bookingDate.checkinDate')?.hasError('required') && bookingForm.get('bookingDate.checkoutDate')?.hasError('required')">
+                {{'Check-out date is required' | translate}}
+              </mat-error>
+              <mat-error
+                *ngIf="!bookingForm.get('bookingDate.checkinDate')?.hasError('required') && bookingForm.get('bookingDate.checkinDate')?.hasError('required') && bookingForm.get('bookingDate')?.errors">
+                {{bookingForm.get('bookingDate')?.errors!['msg'] | translate}}
+              </mat-error>
+            </mat-form-field>
+            <mat-accordion class="mt-3" formGroupName="address">
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{'Address' | translate}}
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="d-flex flex-column">
+                  <mat-form-field>
+                    <mat-label>{{'City' | translate}}</mat-label>
+                    <input
+                      type="text"
+                      matInput
+                      formControlName="city"
+                    />
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>{{'Street' | translate}}</mat-label>
+                    <input
+                      type="text"
+                      matInput
+                      formControlName="street"
+                    />
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>{{'Street Number' | translate}}</mat-label>
+                    <input
+                      type="number"
+                      matInput
+                      formControlName="streetNumber"
+                    />
+                  </mat-form-field>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
           </div>
         </form>
       </mat-expansion-panel>
     </mat-accordion>
   </div>
-<!--  <div class="d-flex justify-content-center" *ngIf="hotelService.getRelatedHotels(hotel.city, hotel.id) | async; let relatedHotels">-->
-<!--    <div class="d-flex flex-column">-->
-<!--      <app-card-->
-<!--        *ngFor="let relatedHotel of relatedHotels"-->
-<!--        [hotel]="relatedHotel"-->
-<!--      ></app-card>-->
-<!--      <h3 *ngIf="relatedHotels.length === 0" class="text-secondary">{{'No similar hotel' | translate}}</h3>-->
-<!--    </div>-->
-<!--  </div>-->
+  <!--  <div class="d-flex justify-content-center" *ngIf="hotelService.getRelatedHotels(hotel.city, hotel.id) | async; let relatedHotels">-->
+  <!--    <div class="d-flex flex-column">-->
+  <!--      <app-card-->
+  <!--        *ngFor="let relatedHotel of relatedHotels"-->
+  <!--        [hotel]="relatedHotel"-->
+  <!--      ></app-card>-->
+  <!--      <h3 *ngIf="relatedHotels.length === 0" class="text-secondary">{{'No similar hotel' | translate}}</h3>-->
+  <!--    </div>-->
+  <!--  </div>-->
   <ng-template #content>
     <img src="{{'assets/hotels-img/' + hotel.img}}" alt="{{hotel.name}}"/>
   </ng-template>
