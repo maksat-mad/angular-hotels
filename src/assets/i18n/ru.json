@@ -127,5 +127,13 @@
   "Street Number": "Номер улицы",
   "Check-in date is required": "Требуется дата заезда",
   "Check-out date is required": "Требуется дата выезда",
-  "Check-out date must be later than check-in date": "Дата выезда должна быть позже даты заезда"
+  "Check-out date must be later than check-in date": "Дата выезда должна быть позже даты заезда",
+
+  "Guests": "Гости",
+  "Guest Name": "Имя гостя",
+  "Guest name is required": "Требуется имя гостя",
+  "Age": "Возраст",
+  "Remove Guest": "Удалить гостя",
+  "Add Guest": "Добавить гостя",
+  "Guest": "Гость"
 }

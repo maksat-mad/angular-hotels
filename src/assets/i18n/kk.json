@@ -127,5 +127,13 @@
   "Street Number": "Көше нөмірі",
   "Check-in date is required": "Келу күні қажет",
   "Check-out date is required": "Кету күні қажет",
-  "Check-out date must be later than check-in date": "Кету күні келу күнінен кейін болуы керек"
+  "Check-out date must be later than check-in date": "Кету күні келу күнінен кейін болуы керек",
+
+  "Guests": "Қонақтар",
+  "Guest Name": "Қонақ аты",
+  "Guest name is required": "Қонақ аты қажет",
+  "Age": "Жасы",
+  "Remove Guest": "Қонақты жою",
+  "Add Guest": "Қонақ қосу",
+  "Guest": "Қонақ"
 }

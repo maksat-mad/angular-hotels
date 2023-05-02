@@ -6,7 +6,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {amenitiesInfoMap, citiesMap, hotels, ratingType} from "../../data/hotels-data/HotelsData";
 import {AuthService} from "../../services/auth.service";
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomValidator} from "../../utils/validators/custom-validator";
 
 @Component({
@@ -50,7 +50,12 @@ export class HotelComponent implements OnInit {
         street: [''],
         streetNumber: [''],
       }),
+      guests: this.fb.array([this.addGuestControl()], {validators: [Validators.required]})
     }, {updateOn: 'blur'});
+  }
+
+  get guests() {
+    return this.bookingForm.get('guests') as FormArray;
   }
 
   noSuchHotel() {
@@ -61,7 +66,43 @@ export class HotelComponent implements OnInit {
     this.modalService.open(content, {centered: true});
   }
 
+  addGuestControl() {
+    return this.fb.group({
+      guestName: ['', { validators: [Validators.required] }],
+      age: new FormControl(''),
+    });
+  }
+
+  addGuest() {
+    this.guests.push(this.addGuestControl());
+  }
+
+  removeGuest(i:number) {
+    this.guests.removeAt(i);
+  }
+
   book() {
     console.log(this.bookingForm.getRawValue());
+    this.clear();
+  }
+
+  clear() {
+    this.bookingForm.reset({
+      hotelName: 'Hotel Name',
+      email: '',
+      phone: '',
+      bookingDate: {
+        checkinDate: '',
+        checkoutDate: ''
+      },
+      address: {
+        city: '',
+        street: '',
+        streetNumber: '',
+      },
+      guests: []
+    });
+    this.guests.clear();
+    this.addGuest();
   }
 }

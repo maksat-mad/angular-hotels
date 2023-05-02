@@ -127,5 +127,13 @@
   "Street Number": "Street Number",
   "Check-in date is required": "Check-in date is required",
   "Check-out date is required": "Check-out date is required",
-  "Check-out date must be later than check-in date": "Check-out date must be later than check-in date"
+  "Check-out date must be later than check-in date": "Check-out date must be later than check-in date",
+
+  "Guests": "Guests",
+  "Guest Name": "Guest Name",
+  "Guest name is required": "Guest name is required",
+  "Age": "Age",
+  "Remove Guest": "Remove Guest",
+  "Add Guest": "Add Guest",
+  "Guest": "Guest"
 }
