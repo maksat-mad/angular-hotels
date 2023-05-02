@@ -222,15 +222,16 @@
       </mat-expansion-panel>
     </mat-accordion>
   </div>
-  <!--  <div class="d-flex justify-content-center" *ngIf="hotelService.getRelatedHotels(hotel.city, hotel.id) | async; let relatedHotels">-->
-  <!--    <div class="d-flex flex-column">-->
-  <!--      <app-card-->
-  <!--        *ngFor="let relatedHotel of relatedHotels"-->
-  <!--        [hotel]="relatedHotel"-->
-  <!--      ></app-card>-->
-  <!--      <h3 *ngIf="relatedHotels.length === 0" class="text-secondary">{{'No similar hotel' | translate}}</h3>-->
-  <!--    </div>-->
-  <!--  </div>-->
+  <div class="d-flex justify-content-center"
+       *ngIf="hotelService.getRelatedHotels(hotel.city, hotel.id) | async; let relatedHotels">
+    <div class="d-flex flex-column">
+      <app-card
+        *ngFor="let relatedHotel of relatedHotels"
+        [hotel]="relatedHotel"
+      ></app-card>
+      <h3 *ngIf="relatedHotels.length === 0" class="text-secondary">{{'No similar hotel' | translate}}</h3>
+    </div>
+  </div>
   <ng-template #content>
     <img src="{{'assets/hotels-img/' + hotel.img}}" alt="{{hotel.name}}"/>
   </ng-template>
