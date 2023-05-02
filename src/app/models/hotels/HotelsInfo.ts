@@ -1,3 +1,5 @@
+import {FormControl, Validators} from "@angular/forms";
+
 export interface Selector {
   value: number;
   viewValue: string;
@@ -53,4 +55,25 @@ export interface Hotel {
   rating: string,
   numberOfReviews: number,
   price: number
+}
+
+export interface BookingInfo {
+  hotelName: string,
+  email: string,
+  phone: string,
+  bookingDate: {
+    checkinDate: string,
+    checkoutDate: string
+  },
+  address: {
+    city: string,
+    street: string,
+    streetNumber: string,
+  },
+  guests: [
+    {
+      guestName: string,
+      age: number
+    }
+  ]
 }

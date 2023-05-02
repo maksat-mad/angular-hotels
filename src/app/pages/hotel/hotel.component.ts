@@ -4,10 +4,11 @@ import {Observable, switchMap} from "rxjs";
 import {Hotel} from "../../models/hotels/HotelsInfo";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {amenitiesInfoMap, citiesMap, hotels, ratingType} from "../../data/hotels-data/HotelsData";
+import {amenitiesInfoMap, citiesMap, ratingType} from "../../data/hotels-data/HotelsData";
 import {AuthService} from "../../services/auth.service";
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomValidator} from "../../utils/validators/custom-validator";
+import {BookingService} from "../../services/booking.service";
 
 @Component({
   selector: 'app-hotel',
@@ -21,6 +22,7 @@ export class HotelComponent implements OnInit {
   authService = inject(AuthService);
   modalService = inject(NgbModal);
   fb = inject(FormBuilder);
+  bookingService = inject(BookingService);
   hotel: Observable<Hotel | undefined> | undefined;
   ratingType = ratingType;
   amenitiesInfoMap = amenitiesInfoMap;
@@ -28,6 +30,7 @@ export class HotelComponent implements OnInit {
   panelOpenState = false;
   bookingForm!: FormGroup;
   todayDate: Date = new Date();
+  formSubmitted = false;
 
   ngOnInit(): void {
     this.hotel = this.route.paramMap.pipe(
@@ -68,7 +71,7 @@ export class HotelComponent implements OnInit {
 
   addGuestControl() {
     return this.fb.group({
-      guestName: ['', { validators: [Validators.required] }],
+      guestName: ['', {validators: [Validators.required]}],
       age: new FormControl(''),
     });
   }
@@ -77,13 +80,14 @@ export class HotelComponent implements OnInit {
     this.guests.push(this.addGuestControl());
   }
 
-  removeGuest(i:number) {
+  removeGuest(i: number) {
     this.guests.removeAt(i);
   }
 
   book() {
-    console.log(this.bookingForm.getRawValue());
+    this.bookingService.bookRoom(this.bookingForm.getRawValue());
     this.clear();
+    this.formSubmitted = true;
   }
 
   clear() {
@@ -104,5 +108,9 @@ export class HotelComponent implements OnInit {
     });
     this.guests.clear();
     this.addGuest();
+  }
+
+  changeFormSubmittedState() {
+    this.formSubmitted = false;
   }
 }

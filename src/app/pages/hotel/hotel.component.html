@@ -37,7 +37,6 @@
       </div>
     </div>
   </div>
-  {{bookingForm.getRawValue() | json}}
   <div class="row mt-5 mb-5">
     <button routerLink="/auth" *ngIf="!authService.isAuthenticated()" mat-raised-button
             color="primary">{{'Login to Book' | translate}}</button>
@@ -49,179 +48,200 @@
             {{'Book Now' | translate}}
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <form [formGroup]="bookingForm" (ngSubmit)="book()" class="d-flex justify-content-center">
-          <div class="d-flex flex-column width-resizer gap-2">
-            <mat-form-field>
-              <mat-label>{{'Hotel Name' | translate}}</mat-label>
-              <input
-                type="text"
-                matInput
-                formControlName="hotelName"
-              />
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>{{'Email' | translate}}</mat-label>
-              <input
-                name="email"
-                matInput
-                placeholder="example@exp.com"
-                formControlName="email"
-                required
-              >
-              <mat-error *ngIf="bookingForm.get('email')?.errors">
-                {{bookingForm.get('email')?.errors!['msg'] | translate}}
-              </mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>{{'Phone' | translate}}</mat-label>
-              <input
-                type="tel"
-                matInput
-                placeholder="+77051956916"
-                formControlName="phone"
-                required
-              >
-              <mat-error *ngIf="bookingForm.get('phone')?.errors">
-                {{bookingForm.get('phone')?.errors!['msg'] | translate}}
-              </mat-error>
-            </mat-form-field>
-            <mat-form-field formGroupName="bookingDate" appearance="fill">
-              <mat-label>{{'Enter a date range' | translate}}</mat-label>
-              <mat-date-range-input [rangePicker]="picker" [min]="todayDate">
-                <input formControlName="checkinDate" matStartDate placeholder="{{'Check-in' | translate}}">
-                <input formControlName="checkoutDate" matEndDate placeholder="{{'Check-out' | translate}}">
-              </mat-date-range-input>
-              <mat-hint>{{'Day / Month / Year' | translate}}</mat-hint>
-              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-date-range-picker #picker></mat-date-range-picker>
-              <mat-error *ngIf="bookingForm.get('bookingDate.checkinDate')?.hasError('required')">
-                {{'Check-in date is required' | translate}}
-              </mat-error>
-              <mat-error
-                *ngIf="!bookingForm.get('bookingDate.checkinDate')?.hasError('required') && bookingForm.get('bookingDate.checkoutDate')?.hasError('required')">
-                {{'Check-out date is required' | translate}}
-              </mat-error>
-              <mat-error
-                *ngIf="!bookingForm.get('bookingDate.checkinDate')?.hasError('required') && bookingForm.get('bookingDate.checkinDate')?.hasError('required') && bookingForm.get('bookingDate')?.errors">
-                {{bookingForm.get('bookingDate')?.errors!['msg'] | translate}}
-              </mat-error>
-            </mat-form-field>
-            <mat-accordion class="mt-3" formGroupName="address">
-              <mat-expansion-panel hideToggle>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    {{'Address' | translate}}
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="d-flex flex-column">
-                  <mat-form-field>
-                    <mat-label>{{'City' | translate}}</mat-label>
-                    <input
-                      type="text"
-                      matInput
-                      formControlName="city"
-                    />
-                  </mat-form-field>
-                  <mat-form-field>
-                    <mat-label>{{'Street' | translate}}</mat-label>
-                    <input
-                      type="text"
-                      matInput
-                      formControlName="street"
-                    />
-                  </mat-form-field>
-                  <mat-form-field>
-                    <mat-label>{{'Street Number' | translate}}</mat-label>
-                    <input
-                      type="number"
-                      matInput
-                      formControlName="streetNumber"
-                    />
-                  </mat-form-field>
-                </div>
-              </mat-expansion-panel>
-            </mat-accordion>
-            <mat-accordion class="mt-3" formArrayName="guests">
-              <mat-expansion-panel hideToggle>
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    {{'Guests' | translate}}*
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="d-flex flex-column gap-2">
-                  <div *ngFor="let guest of guests.controls; let i = index">
-                    <div [formGroupName]="i" class="d-flex flex-column gap-2">
-                      <p class="font-weight-500">{{i + 1}}) {{'Guest' | translate}}</p>
-                      <mat-form-field>
-                        <input
-                          type="text"
-                          matInput
-                          formControlName="guestName"
-                          placeholder="{{'Guest Name' | translate}}*"
-                        />
-                        <mat-error
-                          *ngIf="bookingForm.get(['guests', i, 'guestName'])?.hasError('required')"
+        <div *ngIf="formSubmitted">
+          <p class="font-weight-500 text-success text-center">{{'Successfully booked the room' | translate}}</p>
+          <div class="d-flex justify-content-center">
+            <button
+              mat-raised-button
+              color="primary"
+              type="button"
+              (click)="changeFormSubmittedState()"
+            >
+              {{'Book Now' | translate}}
+            </button>
+          </div>
+        </div>
+        <div *ngIf="!formSubmitted">
+          <form [formGroup]="bookingForm" (ngSubmit)="book()" class="d-flex justify-content-center">
+            <div class="d-flex flex-column width-resizer gap-2">
+              <mat-form-field>
+                <mat-label>{{'Hotel Name' | translate}}</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  formControlName="hotelName"
+                />
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>{{'Email' | translate}}</mat-label>
+                <input
+                  name="email"
+                  matInput
+                  placeholder="example@exp.com"
+                  formControlName="email"
+                  required
+                >
+                <mat-error *ngIf="bookingForm.get('email')?.errors">
+                  {{bookingForm.get('email')?.errors!['msg'] | translate}}
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>{{'Phone' | translate}}</mat-label>
+                <input
+                  type="tel"
+                  matInput
+                  placeholder="+77051956916"
+                  formControlName="phone"
+                  required
+                >
+                <mat-error *ngIf="bookingForm.get('phone')?.errors">
+                  {{bookingForm.get('phone')?.errors!['msg'] | translate}}
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field formGroupName="bookingDate" appearance="fill">
+                <mat-label>{{'Enter a date range' | translate}}</mat-label>
+                <mat-date-range-input [rangePicker]="picker" [min]="todayDate">
+                  <input formControlName="checkinDate" matStartDate placeholder="{{'Check-in' | translate}}">
+                  <input formControlName="checkoutDate" matEndDate placeholder="{{'Check-out' | translate}}">
+                </mat-date-range-input>
+                <mat-hint>{{'Day / Month / Year' | translate}}</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+                <mat-error *ngIf="bookingForm.get('bookingDate.checkinDate')?.hasError('required')">
+                  {{'Check-in date is required' | translate}}
+                </mat-error>
+                <mat-error
+                  *ngIf="!bookingForm.get('bookingDate.checkinDate')?.hasError('required') && bookingForm.get('bookingDate.checkoutDate')?.hasError('required')">
+                  {{'Check-out date is required' | translate}}
+                </mat-error>
+<!--                <mat-error-->
+<!--                  *ngIf="bookingForm.get('bookingDate.checkinDate')?.hasError('required') && !bookingForm.get('bookingDate.checkinDate')?.hasError('required') && bookingForm.get('bookingDate')?.errors">-->
+<!--                  {{bookingForm.get('bookingDate')?.errors!['msg'] | translate}}-->
+<!--                </mat-error>-->
+                <mat-error
+                  *ngIf="bookingForm.get('bookingDate')?.errors">
+                  {{bookingForm.get('bookingDate')?.errors!['msg'] | translate}}
+                </mat-error>
+                {{bookingForm.get('bookingDate')?.errors | json}}
+              </mat-form-field>
+              <mat-accordion class="mt-3" formGroupName="address">
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      {{'Address' | translate}}
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="d-flex flex-column">
+                    <mat-form-field>
+                      <mat-label>{{'City' | translate}}</mat-label>
+                      <input
+                        type="text"
+                        matInput
+                        formControlName="city"
+                      />
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label>{{'Street' | translate}}</mat-label>
+                      <input
+                        type="text"
+                        matInput
+                        formControlName="street"
+                      />
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label>{{'Street Number' | translate}}</mat-label>
+                      <input
+                        type="number"
+                        matInput
+                        formControlName="streetNumber"
+                      />
+                    </mat-form-field>
+                  </div>
+                </mat-expansion-panel>
+              </mat-accordion>
+              <mat-accordion class="mt-3" formArrayName="guests">
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      {{'Guests' | translate}}*
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="d-flex flex-column gap-2">
+                    <div *ngFor="let guest of guests.controls; let i = index">
+                      <div [formGroupName]="i" class="d-flex flex-column gap-2">
+                        <p class="font-weight-500">{{i + 1}}) {{'Guest' | translate}}</p>
+                        <mat-form-field>
+                          <input
+                            type="text"
+                            matInput
+                            formControlName="guestName"
+                            placeholder="{{'Guest Name' | translate}}*"
+                          />
+                          <mat-error
+                            *ngIf="bookingForm.get(['guests', i, 'guestName'])?.hasError('required')"
+                          >
+                            {{'Guest name is required' | translate}}
+                          </mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                          <input
+                            type="number"
+                            matInput
+                            formControlName="age"
+                            placeholder="{{'Age' | translate}}"
+                          />
+                        </mat-form-field>
+                        <button
+                          mat-raised-button
+                          color="warn"
+                          type="button"
+                          (click)="removeGuest(i)"
+                          class="mb-3"
                         >
-                          {{'Guest name is required' | translate}}
-                        </mat-error>
-                      </mat-form-field>
-                      <mat-form-field>
-                        <input
-                          type="number"
-                          matInput
-                          formControlName="age"
-                          placeholder="{{'Age' | translate}}"
-                        />
-                      </mat-form-field>
-                      <button
-                        mat-raised-button
-                        color="warn"
-                        type="button"
-                        (click)="removeGuest(i)"
-                        class="mb-3"
-                      >
-                        {{'Remove Guest' | translate}}
-                      </button>
+                          {{'Remove Guest' | translate}}
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                  <button
+                    mat-raised-button
+                    color="primary"
+                    type="button"
+                    (click)="addGuest()"
+                    class="mt-3"
+                  >
+                    {{'Add Guest' | translate}}
+                  </button>
+                </mat-expansion-panel>
+              </mat-accordion>
+              <div class="d-flex justify-content-between flex-wrap">
                 <button
+                  [disabled]="bookingForm.invalid"
                   mat-raised-button
                   color="primary"
-                  type="button"
-                  (click)="addGuest()"
+                  type="submit"
+                  (click)="book()"
                   class="mt-3"
                 >
-                  {{'Add Guest' | translate}}
+                  {{'Book' | translate}}
                 </button>
-              </mat-expansion-panel>
-            </mat-accordion>
-            <div class="d-flex justify-content-between flex-wrap">
-              <button
-                [disabled]="bookingForm.invalid"
-                mat-raised-button
-                color="primary"
-                type="submit"
-                (click)="book()"
-                class="mt-3"
-              >
-                {{'Book' | translate}}
-              </button>
-              <button
-                mat-raised-button
-                color="basic"
-                type="button"
-                (click)="clear()"
-                class="mt-3"
-              >
-                {{'Clear' | translate}}
-              </button>
+                <button
+                  mat-raised-button
+                  color="basic"
+                  type="button"
+                  (click)="clear()"
+                  class="mt-3"
+                >
+                  {{'Clear' | translate}}
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </mat-expansion-panel>
     </mat-accordion>
   </div>
+  <h2 class="font-weight-500 text-center">{{'Related Hotels' | translate}}</h2>
   <div class="d-flex justify-content-center"
        *ngIf="hotelService.getRelatedHotels(hotel.city, hotel.id) | async; let relatedHotels">
     <div class="d-flex flex-column">
@@ -232,6 +252,7 @@
       <h3 *ngIf="relatedHotels.length === 0" class="text-secondary">{{'No similar hotel' | translate}}</h3>
     </div>
   </div>
+  <h2 class="font-weight-500 text-center">{{'Reviews' | translate}}</h2>
   <ng-template #content>
     <img src="{{'assets/hotels-img/' + hotel.img}}" alt="{{hotel.name}}"/>
   </ng-template>
