@@ -20,6 +20,7 @@ import {NgbPagination, NgbRating} from "@ng-bootstrap/ng-bootstrap";
 import {HotelComponent} from "../../pages/hotel/hotel.component";
 import {ExitButtonComponent} from '../../components/ui/exit-button/exit-button.component';
 import {MatExpansionModule} from "@angular/material/expansion";
+import {ReviewCardComponent} from '../../components/ui/review-card/review-card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
     ChipComponent,
     CardComponent,
     HotelComponent,
-    ExitButtonComponent
+    ExitButtonComponent,
+    ReviewCardComponent
   ],
     imports: [
         CommonModule,

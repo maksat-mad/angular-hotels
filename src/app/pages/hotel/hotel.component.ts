@@ -113,4 +113,8 @@ export class HotelComponent implements OnInit {
   changeFormSubmittedState() {
     this.formSubmitted = false;
   }
+
+  loadMoreReviews() {
+
+  }
 }

@@ -114,10 +114,10 @@
                   *ngIf="!bookingForm.get('bookingDate.checkinDate')?.hasError('required') && bookingForm.get('bookingDate.checkoutDate')?.hasError('required')">
                   {{'Check-out date is required' | translate}}
                 </mat-error>
-<!--                <mat-error-->
-<!--                  *ngIf="bookingForm.get('bookingDate.checkinDate')?.hasError('required') && !bookingForm.get('bookingDate.checkinDate')?.hasError('required') && bookingForm.get('bookingDate')?.errors">-->
-<!--                  {{bookingForm.get('bookingDate')?.errors!['msg'] | translate}}-->
-<!--                </mat-error>-->
+                <!--                <mat-error-->
+                <!--                  *ngIf="bookingForm.get('bookingDate.checkinDate')?.hasError('required') && !bookingForm.get('bookingDate.checkinDate')?.hasError('required') && bookingForm.get('bookingDate')?.errors">-->
+                <!--                  {{bookingForm.get('bookingDate')?.errors!['msg'] | translate}}-->
+                <!--                </mat-error>-->
                 <mat-error
                   *ngIf="bookingForm.get('bookingDate')?.errors">
                   {{bookingForm.get('bookingDate')?.errors!['msg'] | translate}}
@@ -252,7 +252,27 @@
       <h3 *ngIf="relatedHotels.length === 0" class="text-secondary">{{'No similar hotel' | translate}}</h3>
     </div>
   </div>
-  <h2 class="font-weight-500 text-center">{{'Reviews' | translate}}</h2>
+  <hr/>
+  <h2 class="font-weight-500 text-center mt-5">{{'Reviews' | translate}}</h2>
+  <div class="d-flex justify-content-center mb-5">
+    <div>
+      <div class="d-flex flex-column">
+        <app-review-card></app-review-card>
+        <app-review-card></app-review-card>
+        <app-review-card></app-review-card>
+      </div>
+      <div class="d-flex justify-content-center mt-2">
+        <button
+          mat-raised-button
+          color="active"
+          type="button"
+          (click)="loadMoreReviews()"
+        >
+          {{'Load More' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
   <ng-template #content>
     <img src="{{'assets/hotels-img/' + hotel.img}}" alt="{{hotel.name}}"/>
   </ng-template>
