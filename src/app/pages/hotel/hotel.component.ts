@@ -1,7 +1,7 @@
 import {Component, inject, OnInit, TemplateRef} from '@angular/core';
 import {HotelService} from "../../services/hotel.service";
 import {Observable, switchMap} from "rxjs";
-import {Hotel} from "../../models/hotels/HotelsInfo";
+import {Hotel, Comment} from "../../models/hotels/HotelsInfo";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {amenitiesInfoMap, citiesMap, ratingType} from "../../data/hotels-data/HotelsData";
@@ -31,6 +31,9 @@ export class HotelComponent implements OnInit {
   bookingForm!: FormGroup;
   todayDate: Date = new Date();
   formSubmitted = false;
+  comments!: Observable<Comment[]>;
+  page = 1;
+  pageSize = 3;
 
   ngOnInit(): void {
     this.hotel = this.route.paramMap.pipe(
@@ -55,6 +58,8 @@ export class HotelComponent implements OnInit {
       }),
       guests: this.fb.array([this.addGuestControl()], {validators: [Validators.required]})
     }, {updateOn: 'blur'});
+
+    this.comments = this.hotelService.getComments();
   }
 
   get guests() {
@@ -115,6 +120,6 @@ export class HotelComponent implements OnInit {
   }
 
   loadMoreReviews() {
-
+    this.page++;
   }
 }

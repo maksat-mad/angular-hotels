@@ -254,14 +254,16 @@
   </div>
   <hr/>
   <h2 class="font-weight-500 text-center mt-5">{{'Reviews' | translate}}</h2>
-  <div class="d-flex justify-content-center mb-5">
+  <div class="d-flex justify-content-center mb-5" *ngIf="comments | async; let comments">
     <div>
       <div class="d-flex flex-column">
-        <app-review-card></app-review-card>
-        <app-review-card></app-review-card>
-        <app-review-card></app-review-card>
+        <app-review-card
+          *ngFor="let comment of comments | slice: 0 : page * pageSize"
+          [comment]="comment"
+        ></app-review-card>
       </div>
-      <div class="d-flex justify-content-center mt-2">
+      <h3 *ngIf="comments.length === 0" class="text-secondary">{{'No comments' | translate}}</h3>
+      <div class="d-flex justify-content-center mt-2" *ngIf="comments.length > page * pageSize">
         <button
           mat-raised-button
           color="active"

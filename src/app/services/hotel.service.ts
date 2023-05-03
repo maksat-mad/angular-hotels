@@ -1,14 +1,17 @@
-import {Injectable} from '@angular/core';
-import {map, Observable, of, take} from "rxjs";
+import {inject, Injectable} from '@angular/core';
+import {map, Observable, of} from "rxjs";
 import {hotels} from "../data/hotels-data/HotelsData";
-import {Filter, Hotel} from "../models/hotels/HotelsInfo";
+import {Filter, Hotel, Comment} from "../models/hotels/HotelsInfo";
 import {applySortingType} from "../utils/hotels-sorting-utils";
 import {applyFilter} from "../utils/hotels-filter-utils";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class HotelService {
+  http = inject(HttpClient);
+
   getAllHotels(): Observable<Hotel[]> {
     return of(hotels);
   }
@@ -43,5 +46,9 @@ export class HotelService {
 
   getHotelsByFilter(filter: Filter): Observable<Hotel[]> {
     return applyFilter(filter);
+  }
+
+  getComments(): Observable<Comment[]> {
+    return this.http.get<Comment[]>('https://jsonplaceholder.typicode.com/comments');
   }
 }
