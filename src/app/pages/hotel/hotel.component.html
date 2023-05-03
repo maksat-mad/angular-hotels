@@ -253,6 +253,71 @@
     </div>
   </div>
   <hr/>
+  <div class="row mt-5 mb-5">
+    <button routerLink="/auth" *ngIf="!authService.isAuthenticated()" mat-raised-button
+            color="primary">{{'Login to Leave Review' | translate}}</button>
+    <mat-accordion class="mt-3" *ngIf="authService.isAuthenticated()">
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{'Leave Review' | translate}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngIf="reviewSubmitted">
+          <p class="font-weight-500 text-success text-center">{{'Successfully submitted the review' | translate}}</p>
+          <div class="d-flex justify-content-center">
+            <button
+              mat-raised-button
+              color="primary"
+              type="button"
+              (click)="changeReviewSubmittedState()"
+            >
+              {{'Leave Review' | translate}}
+            </button>
+          </div>
+        </div>
+        <div *ngIf="!reviewSubmitted">
+          <form [formGroup]="reviewForm" (ngSubmit)="leaveReview()" class="d-flex justify-content-center">
+            <div class="d-flex flex-column width-resizer gap-2">
+              <div class="d-flex justify-content-between flex-wrap">
+                <ngb-rating
+                  class="gap-1 review-star"
+                  formControlName="rating"
+                ></ngb-rating>
+                <h3 class="font-weight-500">{{this.reviewForm.controls['rating'].value}}/10</h3>
+              </div>
+              <mat-form-field>
+                <mat-label>{{'Leave a comment' | translate}}</mat-label>
+                <textarea formControlName="comment" matInput
+                          placeholder="{{'Ex. This is the perfect hotel...' | translate}}"></textarea>
+              </mat-form-field>
+              <div class="d-flex justify-content-between flex-wrap">
+                <button
+                  [disabled]="reviewForm.invalid"
+                  mat-raised-button
+                  color="primary"
+                  type="submit"
+                  (click)="leaveReview()"
+                  class="mt-3"
+                >
+                  {{'Leave Review' | translate}}
+                </button>
+                <button
+                  mat-raised-button
+                  color="basic"
+                  type="button"
+                  (click)="clearReviewForm()"
+                  class="mt-3"
+                >
+                  {{'Clear' | translate}}
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
   <h2 class="font-weight-500 text-center mt-5">{{'Reviews' | translate}}</h2>
   <div class="d-flex justify-content-center mb-5" *ngIf="comments | async; let comments">
     <div>

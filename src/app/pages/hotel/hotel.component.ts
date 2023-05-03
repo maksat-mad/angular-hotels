@@ -1,7 +1,7 @@
 import {Component, inject, OnInit, TemplateRef} from '@angular/core';
 import {HotelService} from "../../services/hotel.service";
 import {Observable, switchMap} from "rxjs";
-import {Hotel, Comment} from "../../models/hotels/HotelsInfo";
+import {Comment, Hotel} from "../../models/hotels/HotelsInfo";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {amenitiesInfoMap, citiesMap, ratingType} from "../../data/hotels-data/HotelsData";
@@ -34,6 +34,8 @@ export class HotelComponent implements OnInit {
   comments!: Observable<Comment[]>;
   page = 1;
   pageSize = 3;
+  reviewForm!: FormGroup;
+  reviewSubmitted = false;
 
   ngOnInit(): void {
     this.hotel = this.route.paramMap.pipe(
@@ -58,6 +60,11 @@ export class HotelComponent implements OnInit {
       }),
       guests: this.fb.array([this.addGuestControl()], {validators: [Validators.required]})
     }, {updateOn: 'blur'});
+
+    this.reviewForm = this.fb.group({
+      rating: [10, {validators: [Validators.required]}],
+      comment: ['', {validators: [Validators.required]}]
+    }, {updateOn: 'change'});
 
     this.comments = this.hotelService.getComments();
   }
@@ -117,6 +124,22 @@ export class HotelComponent implements OnInit {
 
   changeFormSubmittedState() {
     this.formSubmitted = false;
+  }
+
+  changeReviewSubmittedState() {
+    this.reviewSubmitted = false;
+  }
+
+  leaveReview() {
+    this.reviewSubmitted = true;
+    this.clearReviewForm();
+  }
+
+  clearReviewForm() {
+    this.reviewForm.reset({
+      rating: 10,
+      comment: ''
+    });
   }
 
   loadMoreReviews() {

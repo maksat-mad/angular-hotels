@@ -139,5 +139,11 @@
   "Successfully booked the room": "Нөмірді сәтті брондалды",
   "Related Hotels": "Ұқсас қонақ үйлер",
   "Reviews": "Пікірлер",
-  "Load More": "Көбірек жүктеу"
+  "Load More": "Көбірек жүктеу",
+  "No comments": "Пікірлер жоқ",
+  "Leave Review": "Пікір қалдыру",
+  "Login to Leave Review": "Пікір қалдыру үшін жүйеге кіру",
+  "Successfully submitted the review": "Пікір сәтті жіберілді",
+  "Leave a comment": "Leave a comment",
+  "Ex. This is the perfect hotel...": "Мысалы, бұл тамаша қонақ үй..."
 }
