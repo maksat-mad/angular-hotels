@@ -39,7 +39,6 @@ export class HotelService {
   getRelatedHotels(city: number, id: number): Observable<Hotel[]> {
     return of(
       hotels.filter(hotel => hotel.city === city && id !== hotel.id)
-        .sort(() => 0.5 - Math.random())
         .slice(0, 3)
     );
   }
