@@ -145,5 +145,11 @@
   "Login to Leave Review": "Login to Leave Review",
   "Successfully submitted the review": "Successfully submitted the review",
   "Leave a comment": "Leave a comment",
-  "Ex. This is the perfect hotel...": "Ex. This is the perfect hotel..."
+  "Ex. This is the perfect hotel...": "Ex. This is the perfect hotel...",
+
+  "My Profile": "My Profile",
+  "Change Password": "Change Password",
+  "Successfully changed password": "Successfully changed password",
+  "Failed to change password": "Failed to change password",
+  "New Password": "New Password"
 }

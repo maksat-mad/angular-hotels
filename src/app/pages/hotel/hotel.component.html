@@ -49,7 +49,7 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
         <div *ngIf="formSubmitted">
-          <p class="font-weight-500 text-success text-center">{{'Successfully booked the room' | translate}}</p>
+          <p class="font-weight-500 text-success text-center font-18px">{{'Successfully booked the room' | translate}}</p>
           <div class="d-flex justify-content-center">
             <button
               mat-raised-button
@@ -264,7 +264,7 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
         <div *ngIf="reviewSubmitted">
-          <p class="font-weight-500 text-success text-center">{{'Successfully submitted the review' | translate}}</p>
+          <p class="font-weight-500 text-success text-center font-18px">{{'Successfully submitted the review' | translate}}</p>
           <div class="d-flex justify-content-center">
             <button
               mat-raised-button
@@ -284,7 +284,7 @@
                   class="gap-1 review-star"
                   formControlName="rating"
                 ></ngb-rating>
-                <h3 class="font-weight-500">{{this.reviewForm.controls['rating'].value}}/10</h3>
+                <p class="font-weight-500 font-18px">{{this.reviewForm.controls['rating'].value}}/10</p>
               </div>
               <mat-form-field>
                 <mat-label>{{'Leave a comment' | translate}}</mat-label>
@@ -327,7 +327,7 @@
           [comment]="comment"
         ></app-review-card>
       </div>
-      <h3 *ngIf="comments.length === 0" class="text-secondary">{{'No comments' | translate}}</h3>
+      <p *ngIf="comments.length === 0" class="text-secondary font-18px">{{'No comments' | translate}}</p>
       <div class="d-flex justify-content-center mt-2" *ngIf="comments.length > page * pageSize">
         <button
           mat-raised-button

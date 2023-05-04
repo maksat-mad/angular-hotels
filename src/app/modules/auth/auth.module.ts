@@ -12,11 +12,12 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatRadioModule} from "@angular/material/radio";
 import {FormsModule} from "@angular/forms";
 import {EmailValidatorDirective} from "../../directives/auth/validators/email-validator.directive";
-import {PasswordValidatorDirective} from "../../directives/auth/validators/password-validator.directive";
 import {PhoneValidatorDirective} from '../../directives/auth/validators/phone-validator.directive';
-import {ConfirmPasswordValidatorDirective} from '../../directives/auth/validators/confirm-password-validator.directive';
 import {SignupEmailValidatorDirective} from '../../directives/auth/async-validators/signup-email-validator.directive';
-import {RegisteredEmailValidatorDirective} from '../../directives/auth/async-validators/registered-email-validator.directive';
+import {
+  RegisteredEmailValidatorDirective
+} from '../../directives/auth/async-validators/registered-email-validator.directive';
+import {AuthSharedModule} from "../shared/auth-shared.module";
 
 @NgModule({
   declarations: [
@@ -24,15 +25,14 @@ import {RegisteredEmailValidatorDirective} from '../../directives/auth/async-val
     SignUpComponent,
     ForgotPasswordComponent,
     EmailValidatorDirective,
-    PasswordValidatorDirective,
     PhoneValidatorDirective,
-    ConfirmPasswordValidatorDirective,
     SignupEmailValidatorDirective,
     RegisteredEmailValidatorDirective
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
+    AuthSharedModule,
     TranslateModule,
     MatInputModule,
     MatIconModule,

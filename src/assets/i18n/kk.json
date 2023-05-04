@@ -145,5 +145,11 @@
   "Login to Leave Review": "Пікір қалдыру үшін жүйеге кіру",
   "Successfully submitted the review": "Пікір сәтті жіберілді",
   "Leave a comment": "Leave a comment",
-  "Ex. This is the perfect hotel...": "Мысалы, бұл тамаша қонақ үй..."
+  "Ex. This is the perfect hotel...": "Мысалы, бұл тамаша қонақ үй...",
+
+  "My Profile": "Менің профилім",
+  "Change Password": "Құпия сөзді өзгерту",
+  "Successfully changed password": "Құпия сөз сәтті өзгертілді",
+  "Failed to change password": "Құпия сөзді өзгерту орындалмады",
+  "New Password": "Жаңа құпия сөз"
 }

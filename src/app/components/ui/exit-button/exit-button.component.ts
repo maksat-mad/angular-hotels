@@ -3,7 +3,7 @@ import {NavigationService} from "../../../services/navigation.service";
 
 @Component({
   selector: 'app-exit-button',
-  template: `<a class="exit-button bigger-on-hover text-decoration-none" (click)="goBack()">
+  template: `<a class="exit-button bigger-on-hover text-decoration-none cursor-pointer" (click)="goBack()">
     <div class="button">
       <p class="button-text m-0">{{'Exit' | translate}}</p>
     </div>

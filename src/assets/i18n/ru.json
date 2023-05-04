@@ -145,5 +145,11 @@
   "Login to Leave Review": "Войти, чтобы оставить отзыв",
   "Successfully submitted the review": "Успешно отправлен отзыв",
   "Leave a comment": "Оставить комментарий",
-  "Ex. This is the perfect hotel...": "Например, это идеальный отель..."
+  "Ex. This is the perfect hotel...": "Например, это идеальный отель...",
+
+  "My Profile": "Мой профиль",
+  "Change Password": "Изменить пароль",
+  "Successfully changed password": "Успешно изменен пароль",
+  "Failed to change password": "Не удалось изменить пароль",
+  "New Password": "Новый пароль"
 }

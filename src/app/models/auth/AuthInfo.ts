@@ -11,3 +11,8 @@ export interface SignUpInfo {
   email: string;
   password: string;
 }
+
+export interface ChangePassword {
+  email: string,
+  password: string
+}
