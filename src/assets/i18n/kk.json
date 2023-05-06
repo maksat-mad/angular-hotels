@@ -151,5 +151,9 @@
   "Change Password": "Құпия сөзді өзгерту",
   "Successfully changed password": "Құпия сөз сәтті өзгертілді",
   "Failed to change password": "Құпия сөзді өзгерту орындалмады",
-  "New Password": "Жаңа құпия сөз"
+  "New Password": "Жаңа құпия сөз",
+
+  "My Bookings": "Менің брондауларым",
+  "Dates": "Күндер",
+  "No bookings": "Брондаулар жоқ"
 }

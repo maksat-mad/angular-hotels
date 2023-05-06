@@ -151,5 +151,9 @@
   "Change Password": "Изменить пароль",
   "Successfully changed password": "Успешно изменен пароль",
   "Failed to change password": "Не удалось изменить пароль",
-  "New Password": "Новый пароль"
+  "New Password": "Новый пароль",
+
+  "My Bookings": "Мои бронирования",
+  "Dates": "Даты",
+  "No bookings": "Нет бронирований"
 }

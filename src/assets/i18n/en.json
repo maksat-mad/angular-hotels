@@ -151,5 +151,9 @@
   "Change Password": "Change Password",
   "Successfully changed password": "Successfully changed password",
   "Failed to change password": "Failed to change password",
-  "New Password": "New Password"
+  "New Password": "New Password",
+
+  "My Bookings": "My Bookings",
+  "Dates": "Dates",
+  "No bookings": "No bookings"
 }
