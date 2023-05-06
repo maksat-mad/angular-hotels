@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
   router = inject(Router);
 
   canActivate() {
-    if (this.authService.isAuthenticated()) {
+    if (localStorage.getItem('token') !== null || this.authService.isAuthenticated()) {
       return true;
     }
     this.router.navigate(['/auth/login']);

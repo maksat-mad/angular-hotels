@@ -26,6 +26,7 @@ export class LoginComponent {
     this.isLoading = true;
     this.authService.login(this.loginInfo.email, this.loginInfo.password)
       .then(() => {
+        localStorage.setItem('token', 'token');
         if (document.referrer) {
           this.location.back();
         }
