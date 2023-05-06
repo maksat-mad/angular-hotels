@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {ChangePassword} from "../../models/auth/AuthInfo";
+import {Component, inject} from '@angular/core';
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-profile',
@@ -7,6 +7,7 @@ import {ChangePassword} from "../../models/auth/AuthInfo";
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
+  authService = inject(AuthService);
   changePasswordSubmitted = false;
   isLoading = false;
   hasError = false;
@@ -14,10 +15,8 @@ export class ProfileComponent {
   hidePasswordConfirm = true;
   panelOpenState = false;
   confirmPassword = '';
-  changePasswordInfo: ChangePassword = {
-    email: '',
-    password: ''
-  }
+  password = '';
+
 
   changePasswordSubmittedState() {
     this.changePasswordSubmitted = false;
@@ -26,7 +25,7 @@ export class ProfileComponent {
   }
 
   passwordChangeHandle(password: string) {
-    this.changePasswordInfo.password = password;
+    this.password = password;
     this.confirmPassword = '';
   }
 
@@ -34,18 +33,20 @@ export class ProfileComponent {
     this.isLoading = true;
     this.hasError = false;
 
-    // success
-    this.changePasswordSubmitted = true;
-    this.hasError = false;
-    this.changePasswordInfo.password = '';
-    this.confirmPassword = '';
-    this.hidePassword = true;
-    this.hidePasswordConfirm = true;
-
-    // error
-    // this.hasError = true;
-
-    // finally
-    this.isLoading = false;
+    this.authService.updatePassword(this.password)
+      .then(() => {
+        this.changePasswordSubmitted = true;
+        this.hasError = false;
+        this.password = '';
+        this.confirmPassword = '';
+        this.hidePassword = true;
+        this.hidePasswordConfirm = true;
+      })
+      .catch(() => {
+        this.hasError = true;
+      })
+      .finally(() => {
+        this.isLoading = false;
+      })
   }
 }

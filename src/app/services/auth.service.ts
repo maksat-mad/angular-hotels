@@ -1,5 +1,5 @@
 import {inject, Injectable} from '@angular/core';
-import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut, sendPasswordResetEmail} from "firebase/auth";
+import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut, sendPasswordResetEmail, updatePassword} from "firebase/auth";
 import {Router} from "@angular/router";
 
 @Injectable({
@@ -13,6 +13,10 @@ export class AuthService {
     return !!user;
   }
 
+  getCurrentUserEmail() {
+    return getAuth().currentUser?.email;
+  }
+
   signUp(email: string, password: string) {
     return createUserWithEmailAndPassword(getAuth(), email, password);
   }
@@ -23,6 +27,10 @@ export class AuthService {
 
   sendPasswordResetEmail(email: string) {
     return sendPasswordResetEmail(getAuth(), email);
+  }
+
+  updatePassword(newPassword: string) {
+    return updatePassword(getAuth().currentUser!, newPassword);
   }
 
   logout() {
