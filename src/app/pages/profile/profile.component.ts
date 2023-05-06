@@ -1,13 +1,16 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
+import {BookingService} from "../../services/booking.service";
+import {BookingInfo} from "../../models/hotels/HotelsInfo";
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit{
   authService = inject(AuthService);
+  bookingService = inject(BookingService);
   changePasswordSubmitted = false;
   isLoading = false;
   hasError = false;
@@ -16,7 +19,14 @@ export class ProfileComponent {
   panelOpenState = false;
   confirmPassword = '';
   password = '';
+  bookings: BookingInfo[] = [];
 
+  ngOnInit(): void {
+    const bookingsBSubject = this.bookingService.bookingsBSubject.subscribe((map) => {
+      this.bookings = map.get(this.authService.getCurrentUserEmail()!)!;
+    });
+    bookingsBSubject.unsubscribe();
+  }
 
   changePasswordSubmittedState() {
     this.changePasswordSubmitted = false;
