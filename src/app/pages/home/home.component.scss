@@ -1,0 +1,32 @@
+.home-carousel {
+  width: 900px;
+  height: 500px;
+}
+
+@media(max-width: 1000px) {
+  .home-carousel {
+    width: 720px;
+    height: 400px;
+  }
+}
+
+@media(max-width: 800px) {
+  .home-carousel {
+    width: 600px;
+    height: 334px;
+  }
+}
+
+@media(max-width: 680px) {
+  .home-carousel {
+    width: 400px;
+    height: 223px;
+  }
+}
+
+@media(max-width: 460px) {
+  .home-carousel {
+    width: 300px;
+    height: 167px;
+  }
+}
