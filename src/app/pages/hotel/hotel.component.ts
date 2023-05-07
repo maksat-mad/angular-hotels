@@ -1,6 +1,6 @@
-import {Component, inject, OnInit, TemplateRef} from '@angular/core';
+import {Component, inject, OnDestroy, OnInit, TemplateRef} from '@angular/core';
 import {HotelService} from "../../services/hotel.service";
-import {Observable, switchMap} from "rxjs";
+import {Observable, Subscription, switchMap} from "rxjs";
 import {Comment, Hotel} from "../../models/hotels/HotelsInfo";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
@@ -15,7 +15,7 @@ import {BookingService} from "../../services/booking.service";
   templateUrl: './hotel.component.html',
   styleUrls: ['./hotel.component.scss']
 })
-export class HotelComponent implements OnInit {
+export class HotelComponent implements OnInit, OnDestroy {
   route = inject(ActivatedRoute);
   router = inject(Router);
   hotelService = inject(HotelService);
@@ -36,6 +36,7 @@ export class HotelComponent implements OnInit {
   pageSize = 3;
   reviewForm!: FormGroup;
   reviewSubmitted = false;
+  hotelNameHandler: Subscription | undefined;
 
   ngOnInit(): void {
     this.hotel = this.route.paramMap.pipe(
@@ -60,6 +61,12 @@ export class HotelComponent implements OnInit {
       }),
       guests: this.fb.array([this.addGuestControl()], {validators: [Validators.required]})
     }, {updateOn: 'blur'});
+
+    this.hotelNameHandler = this.hotel.subscribe(hotel => {
+      this.bookingForm.patchValue({
+        hotelName: hotel!.name
+      });
+    });
 
     this.reviewForm = this.fb.group({
       rating: [10, {validators: [Validators.required]}],
@@ -144,5 +151,9 @@ export class HotelComponent implements OnInit {
 
   loadMoreReviews() {
     this.page++;
+  }
+
+  ngOnDestroy(): void {
+    this.hotelNameHandler?.unsubscribe();
   }
 }
