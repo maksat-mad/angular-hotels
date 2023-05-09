@@ -15,12 +15,12 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatSliderModule} from "@angular/material/slider";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ChipComponent} from '../../components/ui/chip/chip.component';
-import {CardComponent} from '../../components/ui/card/card.component';
+import {CardComponent} from '../../components/ui/cards/card/card.component';
 import {NgbPagination, NgbRating} from "@ng-bootstrap/ng-bootstrap";
 import {HotelComponent} from "../../pages/hotel/hotel.component";
 import {ExitButtonComponent} from '../../components/ui/exit-button/exit-button.component';
 import {MatExpansionModule} from "@angular/material/expansion";
-import {ReviewCardComponent} from '../../components/ui/review-card/review-card.component';
+import {ReviewCardComponent} from '../../components/ui/cards/review-card/review-card.component';
 
 @NgModule({
   declarations: [

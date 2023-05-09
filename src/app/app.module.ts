@@ -25,7 +25,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {AuthSharedModule} from "./modules/shared/auth-shared.module";
-import {HistoryCardComponent} from './components/ui/history-card/history-card.component';
+import {HistoryCardComponent} from './components/ui/cards/history-card/history-card.component';
 
 @NgModule({
   declarations: [

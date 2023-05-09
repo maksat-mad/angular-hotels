@@ -1,10 +1,10 @@
 import {Component, Input} from '@angular/core';
-import {Comment} from '../../../models/hotels/HotelsInfo';
+import {Comment} from '../../../../models/hotels/HotelsInfo';
 
 @Component({
   selector: 'app-review-card',
   templateUrl: './review-card.component.html',
-  styleUrls: ['../card/card.component.scss']
+  styleUrls: ['../card.component.scss']
 })
 export class ReviewCardComponent {
   @Input() comment!: Comment;

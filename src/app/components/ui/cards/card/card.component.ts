@@ -1,11 +1,11 @@
 import {Component, Input} from '@angular/core';
-import {amenitiesInfoMap, ratingType} from "../../../data/HotelsData";
-import {Hotel} from "../../../models/hotels/HotelsInfo";
+import {amenitiesInfoMap, ratingType} from "../../../../data/HotelsData";
+import {Hotel} from "../../../../models/hotels/HotelsInfo";
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  styleUrls: ['../card.component.scss']
 })
 export class CardComponent {
   ratingType = ratingType;
