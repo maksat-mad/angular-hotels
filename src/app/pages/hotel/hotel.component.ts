@@ -4,7 +4,7 @@ import {Observable, Subscription, switchMap} from "rxjs";
 import {Comment, Hotel} from "../../models/hotels/HotelsInfo";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {amenitiesInfoMap, citiesMap, ratingType} from "../../data/hotels-data/HotelsData";
+import {amenitiesInfoMap, citiesMap, ratingType} from "../../data/HotelsData";
 import {AuthService} from "../../services/auth.service";
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomValidator} from "../../utils/validators/custom-validator";

@@ -1,5 +1,5 @@
 import {Component, inject, OnDestroy, OnInit} from '@angular/core';
-import {cities, defaultFilter, sortingTypes} from "../../data/hotels-data/HotelsData";
+import {cities, defaultFilter, sortingTypes} from "../../data/HotelsData";
 import {FilterService} from "../../services/filter.service";
 import {Amenity, Filter, Hotel} from "../../models/hotels/HotelsInfo";
 import {fillAmenities} from "../../utils/hotels-filter-utils";

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {Filter} from "../models/hotels/HotelsInfo";
-import {defaultFilter} from "../data/hotels-data/HotelsData";
+import {defaultFilter} from "../data/HotelsData";
 
 @Injectable({
   providedIn: 'root'

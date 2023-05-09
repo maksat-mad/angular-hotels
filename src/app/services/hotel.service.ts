@@ -1,6 +1,6 @@
 import {inject, Injectable} from '@angular/core';
 import {map, Observable, of} from "rxjs";
-import {hotels} from "../data/hotels-data/HotelsData";
+import {hotels} from "../data/HotelsData";
 import {Filter, Hotel, Comment} from "../models/hotels/HotelsInfo";
 import {applySortingType} from "../utils/hotels-sorting-utils";
 import {applyFilter} from "../utils/hotels-filter-utils";

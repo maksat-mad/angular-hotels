@@ -1,6 +1,6 @@
 import {Amenity, Filter, Hotel} from "../models/hotels/HotelsInfo";
 import {Observable, of} from "rxjs";
-import {hotels} from "../data/hotels-data/HotelsData";
+import {hotels} from "../data/HotelsData";
 
 export function fillAmenities(filter: Filter) {
   const amenities: Amenity[] = [];

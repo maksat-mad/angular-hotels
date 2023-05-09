@@ -1,7 +1,7 @@
 import {Component, inject, Input} from '@angular/core';
 import {Amenity, Filter} from "../../../models/hotels/HotelsInfo";
 import {FilterService} from "../../../services/filter.service";
-import {defaultFilter} from "../../../data/hotels-data/HotelsData";
+import {defaultFilter} from "../../../data/HotelsData";
 
 @Component({
   selector: 'app-chip',

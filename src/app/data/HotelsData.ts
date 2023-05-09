@@ -1,4 +1,4 @@
-import {AmenityInfo, Filter, Hotel, Selector} from "../../models/hotels/HotelsInfo";
+import {AmenityInfo, Filter, Hotel, Selector} from "../models/hotels/HotelsInfo";
 
 export const cities: Selector[] = [
   {value: 1, viewValue: 'Perth'},

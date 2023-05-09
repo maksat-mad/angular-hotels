@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {amenitiesInfoMap, ratingType} from "../../../data/hotels-data/HotelsData";
+import {amenitiesInfoMap, ratingType} from "../../../data/HotelsData";
 import {Hotel} from "../../../models/hotels/HotelsInfo";
 
 @Component({
