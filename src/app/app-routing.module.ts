@@ -14,8 +14,8 @@ const routes: Routes = [
     loadChildren: () => import('./modules/hotels/hotels.module').then(c => c.HotelsModule)
   },
   {
-    path: 'about-us',
-    loadComponent: () => import('./pages/about-us/about-us.component').then(c => c.AboutUsComponent)
+    path: 'contacts',
+    loadComponent: () => import('./pages/contacts/contacts.component').then(c => c.ContactsComponent)
   },
   {
     path: 'auth',

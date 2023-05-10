@@ -41,8 +41,8 @@
             <a [ngClass]="router.url === '/hotels' ? 'text-primary' : ''" routerLink="/hotels">
               <li>{{'Hotels' | translate}}</li>
             </a>
-            <a [ngClass]="router.url === '/about-us' ? 'text-primary' : ''" routerLink="/about-us">
-              <li>{{'About' | translate}}</li>
+            <a [ngClass]="router.url === '/contacts' ? 'text-primary' : ''" routerLink="/contacts">
+              <li>{{'Contacts' | translate}}</li>
             </a>
             <a [ngClass]="router.url === '/profile' ? 'text-primary' : ''" *ngIf="authService.isAuthenticated()"
                routerLink="/profile">
