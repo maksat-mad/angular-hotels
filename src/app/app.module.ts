@@ -26,6 +26,7 @@ import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {AuthSharedModule} from "./modules/shared/auth-shared.module";
 import {HistoryCardComponent} from './components/ui/cards/history-card/history-card.component';
+import {PostComponent} from './components/ui/post/post.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {HistoryCardComponent} from './components/ui/cards/history-card/history-c
     ProfileComponent,
     NotFoundComponent,
     FooterComponent,
-    HistoryCardComponent
+    HistoryCardComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

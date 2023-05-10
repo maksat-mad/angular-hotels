@@ -3,28 +3,23 @@
   "About": "About us",
   "Login": "Login",
   "Profile": "Profile",
-
   "Perth": "Perth",
   "Australia": "Australia",
   "Tel": "Tel",
-
   "Failed to login, wrong email or password": "Failed to login, wrong email or password",
   "Loading": "Loading",
   "Email": "Email",
   "You must enter a value": "You must enter a value",
   "Invalid email": "Invalid email",
-
   "Password": "Password",
   "Password must be at least 8 characters": "Password must be at least 8 characters",
   "Password must not contain spaces": "Password must not contain spaces",
   "Password must contain at least one letter": "Password must contain at least one letter",
   "Password must contain at least one digit": "Password must contain at least one digit",
   "Password must contain at least one special character (!#$%&?*@)": "Password must contain at least one special character (!#$%&?*@)",
-
   "Forgot password?": "Forgot password?",
   "Need an account?": "Need an account?",
   "Sign Up": "Sign Up",
-
   "Firstname": "Firstname",
   "Max 12 characters": "Max 12 characters",
   "Ex. Maksat": "Ex. Maksat",
@@ -41,13 +36,11 @@
   "Confirm Password": "Confirm Password",
   "Passwords do not match": "Passwords do not match",
   "Failed to register in the system": "Failed to register in the system",
-
   "Reset password": "Reset password",
   "Failed to send email address": "Failed to send email address",
   "send": "send",
   "This email address is not registered in the system": "This email address is not registered in the system",
   "Check your inbox for further instructions": "Check your inbox for further instructions",
-
   "Sydney": "Sydney",
   "Melbourne": "Melbourne",
   "Brisbane": "Brisbane",
@@ -56,12 +49,10 @@
   "Hobart": "Hobart",
   "Darwin": "Darwin",
   "Going to": "Going to",
-
   "Enter a date range": "Enter a date range",
   "Check-in": "Check-in",
   "Check-out": "Check-out",
   "Day / Month / Year": "Day / Month / Year",
-
   "Filter": "Filter",
   "Clear": "Clear",
   "Property type": "Property type",
@@ -96,28 +87,23 @@
   "Done": "Done",
   "Property name": "Property name",
   "e.g. Paradise": "e.g. Paradise",
-
   "Remove all": "Remove all",
   "1 star": "1 star",
   "2 star": "2 star",
   "3 star": "3 star",
   "4 star": "4 star",
   "5 star": "5 star",
-
   "You have successfully registered in the system, log in": "You have successfully registered in the system, log in",
   "Logout": "Logout",
-
   "Sort by": "Sort by",
   "Recommended": "Recommended",
   "Price: low to high": "Price: low to high",
   "Price: high to low": "Price: high to low",
-
   "reviews": "reviews",
   "for 1 night": "for 1 night",
   "No such hotel": "No such hotel",
   "No similar hotel": "No similar hotel",
   "Exit": "Exit",
-
   "Login to Book": "Login to Book",
   "Book Now": "Book Now",
   "Hotel Name": "Hotel Name",
@@ -128,7 +114,6 @@
   "Check-in date is required": "Check-in date is required",
   "Check-out date is required": "Check-out date is required",
   "Check-out date must be later than check-in date": "Check-out date must be later than check-in date",
-
   "Guests": "Guests",
   "Guest Name": "Guest Name",
   "Guest name is required": "Guest name is required",
@@ -146,19 +131,28 @@
   "Successfully submitted the review": "Successfully submitted the review",
   "Leave a comment": "Leave a comment",
   "Ex. This is the perfect hotel...": "Ex. This is the perfect hotel...",
-
   "My Profile": "My Profile",
   "Change Password": "Change Password",
   "Successfully changed password": "Successfully changed password",
   "Failed to change password": "Failed to change password",
   "New Password": "New Password",
-
   "My Bookings": "My Bookings",
   "Dates": "Dates",
   "No bookings": "No bookings",
-
   "Welcome To Australia": "Welcome To Australia",
-
   "No such page": "No such page",
-  "Go to home page": "Go to home page"
+  "Go to home page": "Go to home page",
+  "Competency development and investment attraction": "Competency development and investment attraction",
+  "Participation in the development and implementation of basic quality standards": "Participation in the development and implementation of basic quality standards",
+  "Incentives for creation of new tourist products and improvement of existing ones": "Incentives for creation of new tourist products and improvement of existing ones",
+  "Generation of proposals for the implementation of investment projects": "Generation of proposals for the implementation of investment projects",
+  "Information and analytical support": "Information and analytical support",
+  "Research and analysis": "Research and analysis",
+  "Elaboration of master plans for the development of tourist destinations": "Elaboration of master plans for the development of tourist destinations",
+  "Monitoring trends in tourism on an ongoing basis": "Monitoring trends in tourism on an ongoing basis",
+  "Marketing and promotion": "Marketing and promotion",
+  "Formation and implementation of the promotion strategy of Australia as a tourist destination": "Formation and implementation of the promotion strategy of Australia as a tourist destination",
+  "Promotion of tourist potential of Australian through traditional and digital channels of promotion within the country and abroad": "Promotion of tourist potential of Australian through traditional and digital channels of promotion within the country and abroad",
+  "Organization of exhibitions, road shows and info-tours": "Organization of exhibitions, road shows and info-tours",
+  "Activities": "Activities"
 }

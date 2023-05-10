@@ -1,0 +1,37 @@
+.post {
+  max-width: 1284px;
+  margin: auto;
+  height: 330px;
+  display: flex;
+  padding: 25px;
+}
+
+.post img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-info {
+  width: 50%;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px)  {
+  .post {
+    max-width: 500px;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .post img {
+    display: none;
+  }
+
+  .post-info {
+    width: 100%;
+  }
+}

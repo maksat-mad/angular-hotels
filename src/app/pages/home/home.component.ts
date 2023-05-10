@@ -1,5 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {NgbCarousel, NgbSlideEvent, NgbSlideEventSource} from '@ng-bootstrap/ng-bootstrap';
+import {Post} from "../../models/home/PostsInfo";
+import {posts} from "../../data/PostsData";
 
 @Component({
   selector: 'app-home',
@@ -13,6 +15,7 @@ export class HomeComponent {
   pauseOnHover = true;
   pauseOnFocus = true;
   carouselImages = ['assets/home-imgs/kangaroo.jpg', 'assets/home-imgs/desert.jpg', 'assets/home-imgs/beach.jpg'];
+  posts: Post[] = posts;
 
   @ViewChild('carousel', {static: true}) carousel!: NgbCarousel;
 

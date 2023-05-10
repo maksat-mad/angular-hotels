@@ -3,28 +3,23 @@
   "About": "Біз туралы",
   "Login": "Кіру",
   "Profile": "Профил",
-
   "Perth": "Перт",
   "Australia": "Аустралия",
   "Tel": "Тел",
-
   "Failed to login, wrong email or password": "Кіру сәтсіз аяқталды, қате электрондық пошта немесе құпия сөз",
   "Loading": "Жүктелуде",
   "Email": "Электрондық пошта",
   "You must enter a value": "Мән енгізу керек",
   "Invalid email": "Жарамсыз электрондық пошта",
-
   "Password": "Құпия сөз",
   "Password must be at least 8 characters": "Құпия сөз кемінде 8 таңбадан тұруы керек",
   "Password must not contain spaces": "Құпия сөзде бос орындар болмауы керек",
   "Password must contain at least one letter": "Құпия сөзде кем дегенде бір әріп болуы керек",
   "Password must contain at least one digit": "Құпия сөзде кем дегенде бір сан болуы керек",
   "Password must contain at least one special character (!#$%&?*@)": "Құпия сөзде кем дегенде бір арнайы таңба болуы керек (!#$%&?*@)",
-
   "Forgot password?": "Құпия сөзіңізді ұмыттыңыз ба?",
   "Need an account?": "Аккаунт керек?",
   "Sign Up": "Тіркелу",
-
   "Firstname": "Аты",
   "Max 12 characters": "Ең көбі 12 таңба",
   "Ex. Maksat": "Мысалы, Мақсат",
@@ -41,13 +36,11 @@
   "Confirm Password": "Құпия сөзді растау",
   "Passwords do not match": "Құпия сөздер сәйкес келмейді",
   "Failed to register in the system": "Жүйеге тіркелу мүмкін болмады",
-
   "Reset password": "Құпия сөзді өзгерту",
   "Failed to send email address": "Электрондық пошта мекенжайын жіберу мүмкін болмады",
   "send": "жіберу",
   "This email address is not registered in the system": "Бұл электрондық пошта мекенжайы жүйеде тіркелмеген",
   "Check your inbox for further instructions": "Қосымша нұсқаулар алу үшін электрондық пошта жәшігін тексеріңіз",
-
   "Sydney": "Сидней",
   "Melbourne": "Мельбурн",
   "Brisbane": "Брисбен",
@@ -56,12 +49,10 @@
   "Hobart": "Хобарт",
   "Darwin": "Дарвин",
   "Going to": "Бару",
-
   "Enter a date range": "Күндер аралығын енгізіңіз",
   "Check-in": "Келу",
   "Check-out": "Кету",
   "Day / Month / Year": "Күн / Ай / Жыл",
-
   "Filter": "Фильтр",
   "Clear": "Тазарту",
   "Property type": "Меншік түрі",
@@ -96,28 +87,23 @@
   "Done": "Орындалды",
   "Property name": "Меншік атауы",
   "e.g. Paradise": "мысалы, Парадиз",
-
   "Remove all": "Барлығын жою",
   "1 star": "1 жұлдыз",
   "2 star": "2 жұлдыз",
   "3 star": "3 жұлдыз",
   "4 star": "4 жұлдыз",
   "5 star": "5 жұлдыз",
-
   "You have successfully registered in the system, log in": "Сіз жүйеде сәтті тіркелдіңіз, енді жүйеге кіріңіз",
   "Logout": "Шығу",
-
   "Sort by": "Сорттау",
   "Recommended": "Ұсынылған",
   "Price: low to high": "Баға: төменнен жоғарыға",
   "Price: high to low": "Баға: жоғарыдан төменге",
-
   "reviews": "пікірлер",
   "for 1 night": "1 түнге",
   "No such hotel": "Мұндай қонақ үй жоқ",
   "No similar hotel": "Ұқсас қонақүй жоқ",
   "Exit": "Шығу",
-
   "Login to Book": "Брондау үшін кіру",
   "Book Now": "Қазір брондаңыз",
   "Hotel Name": "Қонақ үй атауы",
@@ -128,7 +114,6 @@
   "Check-in date is required": "Келу күні қажет",
   "Check-out date is required": "Кету күні қажет",
   "Check-out date must be later than check-in date": "Кету күні келу күнінен кейін болуы керек",
-
   "Guests": "Қонақтар",
   "Guest Name": "Қонақ аты",
   "Guest name is required": "Қонақ аты қажет",
@@ -146,19 +131,28 @@
   "Successfully submitted the review": "Пікір сәтті жіберілді",
   "Leave a comment": "Leave a comment",
   "Ex. This is the perfect hotel...": "Мысалы, бұл тамаша қонақ үй...",
-
   "My Profile": "Менің профилім",
   "Change Password": "Құпия сөзді өзгерту",
   "Successfully changed password": "Құпия сөз сәтті өзгертілді",
   "Failed to change password": "Құпия сөзді өзгерту орындалмады",
   "New Password": "Жаңа құпия сөз",
-
   "My Bookings": "Менің брондауларым",
   "Dates": "Күндер",
   "No bookings": "Брондаулар жоқ",
-
   "Welcome To Australia": "Австралияға қош келдіңіз",
-
   "No such page": "Мұндай бет жоқ",
-  "Go to home page": "Негізгі бетке өту"
+  "Go to home page": "Негізгі бетке өту",
+  "Competency development and investment attraction": "Құзыреттілікті дамыту және инвестиция тарту",
+  "Participation in the development and implementation of basic quality standards": "Негізгі сапа стандарттарын әзірлеуге және енгізуге қатысу",
+  "Incentives for creation of new tourist products and improvement of existing ones": "Жаңа туристік өнімдерді құруға ынталандыру және қолданыстағыларын жақсарту",
+  "Generation of proposals for the implementation of investment projects": "Инвестициялық жобаларды жүзеге асыру бойынша ұсыныстарды қалыптастыру",
+  "Information and analytical support": "Ақпараттық-аналитикалық қамтамасыз ету",
+  "Research and analysis": "Зерттеу және талдау",
+  "Elaboration of master plans for the development of tourist destinations": "Туристік бағыттарды дамытудың бас жоспарларын әзірлеу",
+  "Monitoring trends in tourism on an ongoing basis": "Туризмдегі трендтерді тұрақты негізде бақылау",
+  "Marketing and promotion": "Маркетинг және жылжыту",
+  "Formation and implementation of the promotion strategy of Australia as a tourist destination": "Австралияны туристік дестинация ретінде жылжыту стратегиясын қалыптастыру және жүзеге асыру",
+  "Promotion of tourist potential of Australian through traditional and digital channels of promotion within the country and abroad": "Австралияның туристік әлеуетін ел ішінде және шетелде дәстүрлі және цифрлық жылжыту арналары арқылы жылжыту",
+  "Organization of exhibitions, road shows and info-tours": "Көрмелерді, роуд-шоуларды және инфо-турларды ұйымдастыру",
+  "Activities": "Іс-әрекеттер"
 }

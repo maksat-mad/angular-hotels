@@ -3,28 +3,23 @@
   "About": "О нас",
   "Login": "Вход",
   "Profile": "Профиль",
-
   "Perth": "Перт",
   "Australia": "Австралия",
   "Tel": "Тел",
-
   "Failed to login, wrong email or password": "Не удалось войти, неверный адрес электронной почты или пароль",
   "Loading": "Загрузка",
   "Email": "Электронная почта",
   "You must enter a value": "Вы должны ввести значение",
   "Invalid email": "Неверный адрес электронной почты",
-
   "Password": "Пароль",
   "Password must be at least 8 characters": "Пароль должен содержать не менее 8 символов",
   "Password must not contain spaces": "Пароль не должен содержать пробелов",
   "Password must contain at least one letter": "Пароль должен содержать хотя бы одну букву",
   "Password must contain at least one digit": "Пароль должен содержать хотя бы одну цифру",
   "Password must contain at least one special character (!#$%&?*@)": "Пароль должен содержать хотя бы один специальный символ (!#$%&?*@)",
-
   "Forgot password?": "Забыли пароль?",
   "Need an account?": "Нужен аккаунт?",
   "Sign Up": "Зарегистрироваться",
-
   "Firstname": "Имя",
   "Max 12 characters": "Максимум 12 символов",
   "Ex. Maksat": "Например, Максат",
@@ -41,13 +36,11 @@
   "Confirm Password": "Подтвердить пароль",
   "Passwords do not match": "Пароли не совпадают",
   "Failed to register in the system": "Не удалось зарегистрироваться в системе",
-
   "Reset password": "Сбросить пароль",
   "Failed to send email address": "Не удалось отправить адрес электронной почты",
   "send": "отправить",
   "This email address is not registered in the system": "Этот адрес электронной почты не зарегистрирован в системе",
   "Check your inbox for further instructions": "Проверьте свой почтовый ящик для получения дальнейших инструкций",
-
   "Sydney": "Сидней",
   "Melbourne": "Мельбурн",
   "Brisbane": "Брисбен",
@@ -56,12 +49,10 @@
   "Hobart": "Хобарт",
   "Darwin": "Дарвин",
   "Going to": "Собираюсь",
-
   "Enter a date range": "Введите диапазон дат",
   "Check-in": "Заезд",
   "Check-out": "Выезд",
   "Day / Month / Year": "День / Месяц / Год",
-
   "Filter": "Фильтр",
   "Clear": "Очистить",
   "Property type": "Тип свойства",
@@ -96,28 +87,23 @@
   "Done": "Сделано",
   "Property name": "Название",
   "e.g. Paradise": "например, Парадиз",
-
   "Remove all": "Удалить все",
   "1 star": "1 звезда",
   "2 star": "2 звезды",
   "3 star": "3 звезды",
   "4 star": "4 звезды",
   "5 star": "5 звезд",
-
   "You have successfully registered in the system, log in": "Вы успешно зарегистрированы в системе, авторизуйтесь",
   "Logout": "Выйти",
-
   "Sort by": "Сортировать по",
   "Recommended": "Рекомендуется",
   "Price: low to high": "Цена: от низкой к высокой",
   "Price: high to low": "Цена: от высокой к низкой",
-
   "reviews": "отзывы",
   "for 1 night": "на 1 ночь",
   "No such hotel": "Нет такого отеля",
   "No similar hotel": "Нет похожего отеля",
   "Exit": "Выход",
-
   "Login to Book": "Войти, чтобы забронировать",
   "Book Now": "Забронировать сейчас",
   "Hotel Name": "Название отеля",
@@ -128,7 +114,6 @@
   "Check-in date is required": "Требуется дата заезда",
   "Check-out date is required": "Требуется дата выезда",
   "Check-out date must be later than check-in date": "Дата выезда должна быть позже даты заезда",
-
   "Guests": "Гости",
   "Guest Name": "Имя гостя",
   "Guest name is required": "Требуется имя гостя",
@@ -146,19 +131,28 @@
   "Successfully submitted the review": "Успешно отправлен отзыв",
   "Leave a comment": "Оставить комментарий",
   "Ex. This is the perfect hotel...": "Например, это идеальный отель...",
-
   "My Profile": "Мой профиль",
   "Change Password": "Изменить пароль",
   "Successfully changed password": "Успешно изменен пароль",
   "Failed to change password": "Не удалось изменить пароль",
   "New Password": "Новый пароль",
-
   "My Bookings": "Мои бронирования",
   "Dates": "Даты",
   "No bookings": "Нет бронирований",
-
   "Welcome To Australia": "Добро пожаловать в Австралию",
-
   "No such page": "Нет такой страницы",
-  "Go to home page": "Перейти на домашнюю страницу"
+  "Go to home page": "Перейти на домашнюю страницу",
+  "Competency development and investment attraction": "Развитие компетенций и привлечение инвестиций",
+  "Participation in the development and implementation of basic quality standards": "Участие в разработке и внедрении основных стандартов качества",
+  "Incentives for creation of new tourist products and improvement of existing ones": "Стимулы создания новых турпродуктов и улучшения существующих",
+  "Generation of proposals for the implementation of investment projects": "Формирование предложений по реализации инвестиционных проектов",
+  "Information and analytical support": "Информационно-аналитическое обеспечение",
+  "Research and analysis": "Исследования и анализ",
+  "Elaboration of master plans for the development of tourist destinations": "Разработка генеральных планов развития туристских дестинаций",
+  "Monitoring trends in tourism on an ongoing basis": "Мониторинг тенденций в туризме на постоянной основе",
+  "Marketing and promotion": "Маркетинг и продвижение",
+  "Formation and implementation of the promotion strategy of Australia as a tourist destination": "Формирование и реализация стратегии продвижения Австралии как туристической дестинации",
+  "Promotion of tourist potential of Australian through traditional and digital channels of promotion within the country and abroad": "Продвижение туристического потенциала австралийцев через традиционные и цифровые каналы продвижения внутри страны и за рубежом",
+  "Organization of exhibitions, road shows and info-tours": "Организация выставок, роуд-шоу и инфотуров",
+  "Activities": "Действия"
 }

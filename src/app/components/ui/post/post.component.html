@@ -1,0 +1,9 @@
+<div class="post">
+  <img src="{{'assets/home-imgs/' + post.image}}" alt="competency"/>
+  <div class="post-info">
+    <div>
+      <h3 class="text-primary">{{post.title | translate}}</h3>
+      <p *ngFor="let text of post.texts">{{text | translate}}</p>
+    </div>
+  </div>
+</div>
